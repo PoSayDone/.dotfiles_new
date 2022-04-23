@@ -1,0 +1,163 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+## A script to get colours from xrdb & deploy it to polybar, alacritty & rofi.
+
+DIR="$HOME/.config/bspwm"
+
+getcolors () {{
+	FOREGROUND="{foreground}"
+	BACKGROUND="{background}"
+	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{{print $NF}}')"
+	BLACK="{color0}"
+	RED="{color1}"
+	GREEN="{color2}"
+	YELLOW="{color3}"
+	BLUE="{color4}"
+	MAGENTA="{color5}"
+	CYAN="{color6}"
+	WHITE="{color7}"
+	ALTBLACK="{color8}"
+	ALTRED="{color9}"
+	ALTGREEN="{color10}"
+	ALTYELLOW="{color11}"
+	ALTBLUE="{color12}"
+	ALTMAGENTA="{color13}"
+	ALTCYAN="{color14}"
+	ALTWHITE="{color15}"
+}}
+
+bspbar () {{
+	cat > $DIR/polybar/colors <<- EOF
+	[colors]
+
+	foreground = ${{FOREGROUND}}
+	background = #80{color0.strip}
+  active = {active}
+  inactive = {inactive}
+	black = ${{BLACK}}
+	red = ${{RED}}
+	green = ${{GREEN}}
+	yellow = ${{YELLOW}}
+	blue = ${{BLUE}}
+	magenta = ${{MAGENTA}}
+	cyan = ${{CYAN}}
+	white = ${{WHITE}}
+	altblack = ${{ALTBLACK}}
+	altred = ${{ALTRED}}
+	altgreen = ${{ALTGREEN}}
+	altyellow = ${{ALTYELLOW}}
+	altblue = ${{ALTBLUE}}
+	altmagenta = ${{ALTMAGENTA}}
+	altcyan = ${{ALTCYAN}}
+	altwhite = ${{ALTWHITE}}
+	EOF
+}}
+
+bspterm () {{
+	cat > "$DIR"/alacritty/colors.yml <<- _EOF_
+		## Colors configuration
+		colors:
+		  # Default colors
+		  primary:
+		    background: '${{BACKGROUND}}'
+		    foreground: '${{FOREGROUND}}'
+
+		  # Normal colors
+		  normal:
+		    black:   '${{BLACK}}'
+		    red:     '${{RED}}'
+		    green:   '${{GREEN}}'
+		    yellow:  '${{YELLOW}}'
+		    blue:    '${{BLUE}}'
+		    magenta: '${{MAGENTA}}'
+		    cyan:    '${{CYAN}}'
+		    white:   '${{WHITE}}'
+
+		  # Bright colors
+		  bright:
+		    black:   '${{ALTBLACK}}'
+		    red:     '${{ALTRED}}'
+		    green:   '${{ALTGREEN}}'
+		    yellow:  '${{ALTYELLOW}}'
+		    blue:    '${{ALTBLUE}}'
+		    magenta: '${{ALTMAGENTA}}'
+		    cyan:    '${{ALTCYAN}}'
+		    white:   '${{ALTWHITE}}'
+	_EOF_
+}}
+
+#code-transparent needed
+bspvscode () {{
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"{color0}80",/' "$HOME/.config/Code - OSS/User/settings.json" &
+}}
+
+bsprofi () {{
+	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
+	* {{
+		background:			{color0}80;
+    background-alt: #00000000;
+		foreground:			${{FOREGROUND}};
+		selected:			${{BLUE}};
+		highlight:			${{YELLOW}};
+		urgent:				${{RED}};
+		on:					${{GREEN}};
+		off:				${{RED}};
+	}}
+	EOF
+}}
+
+bspdunst () {{
+	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunstrc
+	cat >> "$HOME"/.config/bspwm/dunstrc <<- _EOF_
+		[urgency_low]
+		timeout = 2
+    background = "${{BACKGROUND}}80"
+    foreground = "${{FOREGROUND}}"
+		frame_color = "${{BLUE}}"
+
+		[urgency_normal]
+		timeout = 5
+    background = "${{BACKGROUND}}80"
+    foreground = "${{FOREGROUND}}"
+		frame_color = "${{BLUE}}"
+
+		[urgency_critical]
+		timeout = 0
+    background = "${{BACKGROUND}}80"
+    foreground = "${{FOREGROUND}}"
+		frame_color = "${{RED}}"
+	_EOF_
+}}
+
+#colors for firefox
+bspcss () {{
+	cat > $DIR/css/colors.css <<- EOF	
+	:root {{
+		--bg-color: {color0}80;
+	}}
+	EOF
+}}
+
+#needed pywal-discord (yay -S pywal-discord)
+bspapps () {{
+  exec python3 $DIR/scripts/wal-telegram/pallete-gen.py &
+  exec pywal-discord &
+}}
+
+
+
+main () {{
+	getcolors
+	bspbar
+	bspterm
+	bsprofi
+	bspdunst
+  bspvscode
+  bspcss
+  bspapps
+}}
+
+main
