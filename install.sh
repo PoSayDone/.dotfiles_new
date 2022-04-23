@@ -7,8 +7,9 @@ cd tmpdotfiles
 cp files/.Xresources files/.xsettingsd $HOME
 cp -r files/ $HOME/.config/bspwm
 cd $HOME/.config/bspwm/
-ln -s wpg $HOME/.config/wpg
-ln -s sxhkd $HOME/.config/sxhkd
+ln -sf wpg $HOME/.config/wpg
+ln -sf sxhkd $HOME/.config/sxhkd
+ln -sf ranger $HOME/.config
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
 fc-cache -r
