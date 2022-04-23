@@ -3,7 +3,7 @@
 
 ## Installation
 - Before running installation command, backup all your existing configs.
-- After you have made a backup, delete these folders from .config: bspwm. sxhkd, wpg.
+- After you have made a backup, delete these folders from .config: bspwm. sxhkd, wpg, ranger.
 - Now you are ready to start.
 
 ```bash
