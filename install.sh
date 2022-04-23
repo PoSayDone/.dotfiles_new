@@ -5,10 +5,10 @@ cd $HOME
 git clone https://github.com/PoSayDone/.dotfiles_new.git tmpdotfiles
 cd tmpdotfiles
 cp files/.Xresources files/.xsettingsd $HOME
-cp -r files/ $HOME/.config/bspwm1
-cd $HOME/.config/bspwm1/
-ln -s wpg $HOME/.config/wpg2
-ln -s sxhkd $HOME/.config/sxhkd2
+cp -r files/ $HOME/.config/bspwm
+cd $HOME/.config/bspwm/
+ln -s wpg $HOME/.config/wpg
+ln -s sxhkd $HOME/.config/sxhkd
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
 fc-cache -r
