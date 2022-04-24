@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing dependencies"
-yay -S 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-ibhagwan-git' 'xfce-polkit' 'xfce4-power-manager''xsettingsd''xorg-xsetroot' 'wmname' 'lunarvim-git' 'git' 'bspwm' 'wpgtk'
+yay -S 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-jonaburg-fix' 'xfce-polkit' 'xfce4-power-manager''xsettingsd''xorg-xsetroot' 'wmname' 'lunarvim-git' 'git' 'bspwm' 'wpgtk'
 cd $HOME
 git clone https://github.com/PoSayDone/.dotfiles_new.git tmpdotfiles
 cd tmpdotfiles
