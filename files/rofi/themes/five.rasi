@@ -48,7 +48,7 @@ element {
     background-color:               @background-light;
     text-color:                     @foreground;
     orientation:                    vertical;
-    border-radius:                  12px;
+    border-radius:                  10px;
 }
 
 element-text {
@@ -64,7 +64,7 @@ element normal.urgent,
 element alternate.urgent {
     background-color:               @urgent;
     text-color:                     @foreground;
-    border-radius:                  12px;
+    border-radius:                  10px;
 }
 
 element normal.active,

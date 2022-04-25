@@ -10,32 +10,32 @@
 @import "colors.rasi"
 
 configuration {
-	font:							"Cartograph CF DemiBold 11";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-window: 					"";
-	sidebar-mode: 					false;
+  font:                 "Cartograph CF DemiBold 11";
+  show-icons:           true;
+  icon-theme:           "Papirus";
+  display-window:       "";
+  sidebar-mode:         false;
 }
 
 window {
-    transparency:                   "real";
-    background-color:               @background;
-    text-color:                     @foreground;
-	border:							0px;
-	border-color:					@border;
-    border-radius:                  12px;
-	width:							40%;
-    location:                       center;
-    x-offset:                       0;
-    y-offset:                       0;
+  transparency:                 "real";
+  background-color:             @background;
+  text-color:                   @foreground;
+  border:			0px;
+  border-color:                 @border;
+  border-radius:                10px;
+  width:                        40%;
+  location:                     center;
+  x-offset:                     0;
+  y-offset:                     0;
 }
 
 prompt {
-    enabled: 						true;
-	padding: 						0% 1% 0% -0.5%;
-	background-color: 				@background-alt;
-	text-color: 					@foreground;
-	font:							"FantasqueSansMono Nerd Font 12";
+    enabled: 				true;
+	padding: 			0% 1% 0% -0.5%;
+	background-color: 		@background-alt;
+	text-color: 			@foreground;
+	font:				"FantasqueSansMono Nerd Font 12";
 }
 
 entry {
@@ -50,15 +50,15 @@ entry {
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
-    background-color:               @background;
-    text-color:                     @foreground;
-    expand:                         false;
-	border:							0% 0% 0% 0%;
-    border-radius:                  12px;
-	border-color:					@accent;
-    margin:                         0% 0% 0% 0%;
-    padding:                        1.5%;
+  children:                     [ prompt, entry ];
+  background-color:             @background;
+  text-color:                     @foreground;
+  expand:                         false;
+  border:							0% 0% 0% 0%;
+  border-radius:                  10px;
+  border-color:					@accent;
+  margin:                         0% 0% 0% 0%;
+  padding:                        1.5%;
 }
 
 listview {
@@ -110,6 +110,6 @@ element selected {
     background-color:               @background;
     text-color:                     @foreground;
 	border:							0% 0% 0% 0%;
-    border-radius:                  12px;
+    border-radius:                  10px;
     border-color:                  	@selected;
 }
