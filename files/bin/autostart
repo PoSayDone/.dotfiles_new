@@ -1,5 +1,6 @@
 #!/bin/sh
 killall polybar; exec polybar bspwm -c $HOME/.config/bspwm/polybar/config.ini &
+$HOME/.config/wpg/wp_init.sh &
 
 if ps ax | grep -v grep | grep discord > /dev/null
 then
