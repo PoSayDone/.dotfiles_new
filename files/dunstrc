@@ -15,7 +15,7 @@ horizontal_padding = 15
 frame_width = 0
 sort = no
 idle_threshold = 120
-font = Cartograph CF Italic 10 
+font = Cartograph CF 10 
 line_height = 4
 markup = full
 format = %s\n%b
@@ -37,18 +37,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 2
-    background = "#0d0c0f80"
-    foreground = "#fff3ff"
-frame_color = "#6B84B6"
+    background = "#0A0E1180"
+    foreground = "#fffaff"
+frame_color = "#5E81B4"
 
 [urgency_normal]
 timeout = 5
-    background = "#0d0c0f80"
-    foreground = "#fff3ff"
-frame_color = "#6B84B6"
+    background = "#0A0E1180"
+    foreground = "#fffaff"
+frame_color = "#5E81B4"
 
 [urgency_critical]
 timeout = 0
-    background = "#0d0c0f80"
-    foreground = "#fff3ff"
-frame_color = "#8A7689"
+    background = "#0A0E1180"
+    foreground = "#fffaff"
+frame_color = "#92A7CF"

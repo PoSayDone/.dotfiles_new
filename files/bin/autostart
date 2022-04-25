@@ -1,15 +1,7 @@
 #!/bin/sh
-exec killall polybar &
-sleep 2;
-
-exec polybar bspwm -c $HOME/.config/bspwm/polybar/config.ini &
-exec polybar time -c $HOME/.config/bspwm/polybar/config.ini &
-exec polybar battery -c $HOME/.config/bspwm/polybar/config.ini &
-exec polybar stats -c $HOME/.config/bspwm/polybar/config.ini &
-exec polybar tray -c $HOME/.config/bspwm/polybar/config.ini &
+killall polybar; exec polybar bspwm -c $HOME/.config/bspwm/polybar/config.ini &
 
 if ps ax | grep -v grep | grep discord > /dev/null
-
 then
     echo "discord service running, everything is fine"
 else

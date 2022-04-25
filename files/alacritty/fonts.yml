@@ -5,7 +5,7 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "CartographCF"
+    family: "CartographCF Nerd Font"
     style: Regular
 
   # Bold font face
@@ -16,7 +16,7 @@ font:
   # Italic font face
   italic:
     family: "CartographCF"
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
   bold_italic:
@@ -28,8 +28,8 @@ font:
 
   # Offset
   offset:
-     x: -1
-  #  y: 0
+    x: -1
+    y: 5
 
   # Glyph offset
   #glyph_offset:
