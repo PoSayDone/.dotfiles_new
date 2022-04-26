@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "Installing dependencies"
 yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-jonaburg-fix' 'xfce-polkit' 'xfce4-power-manager''xsettingsd''xorg-xsetroot' 'wmname' 'lunarvim-git' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git'
-wpg-install.sh -g
 cd $HOME
 git clone https://github.com/PoSayDone/.dotfiles_new.git tmpdotfiles
 rm -rf $HOME/.config/bspwm $HOME/.config/wpg $HOME/.config/sxhkd $HOME/.config/ranger
@@ -10,6 +9,7 @@ cp files/.Xresources files/.xsettingsd $HOME
 cp -r files/ $HOME/.config/bspwm
 cd $HOME/.config/bspwm/
 ln -sf $HOME/.config/bspwm/wpg $HOME/.config/
+wpg-install.sh -g
 ln -sf $HOME/.config/bspwm/sxhkd $HOME/.config/
 ln -sf $HOME/.config/bspwm/ranger $HOME/.config/
 mkdir $HOME/.fonts
