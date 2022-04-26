@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#fffaff"
-	BACKGROUND="#0A0E11"
+	FOREGROUND="#eeffff"
+	BACKGROUND="#131819"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#0A0E11"
-	RED="#92A7CF"
-	GREEN="#6B89B6"
-	YELLOW="#959DB2"
-	BLUE="#5E81B4"
-	MAGENTA="#A1AFD0"
-	CYAN="#7594C5"
-	WHITE="#dcd4da"
-	ALTBLACK="#1c2731"
-	ALTRED="#a6d1ff"
-	ALTGREEN="#78aeff"
-	ALTYELLOW="#acc2fc"
-	ALTBLUE="#68a4fb"
-	ALTMAGENTA="#b9d9ff"
-	ALTCYAN="#83bbff"
-	ALTWHITE="#fffaff"
+	BLACK="#131819"
+	RED="#95B6D3"
+	GREEN="#6C8EA5"
+	YELLOW="#D1C2A7"
+	BLUE="#4188BC"
+	MAGENTA="#9AA2A6"
+	CYAN="#63A2D1"
+	WHITE="#cbdce7"
+	ALTBLACK="#283335"
+	ALTRED="#aaeeff"
+	ALTGREEN="#7abce8"
+	ALTYELLOW="#ffffc0"
+	ALTBLUE="#44b3ff"
+	ALTMAGENTA="#b3d9ec"
+	ALTCYAN="#6cd5ff"
+	ALTWHITE="#eeffff"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #800A0E11
-  active = #5383c8
-  inactive = #395a89
+	background = #80131819
+  active = #368fcb
+  inactive = #25628b
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -91,13 +91,13 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#0A0E1180",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#13181980",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#0A0E1180;
+		background:			#13181980;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		selected:			${BLUE};
@@ -136,7 +136,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #0A0E1180;
+		--bg-color: #13181980;
 	}
 	EOF
 }

@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/posaydone/.config/wpg/wallpapers/23.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#1f1c21",
+        "foreground": "#fdfdff",
+        "cursor": "#fdfdff"
+    },
+    "colors": {
+        "color0": "#1f1c21",
+        "color1": "#ADCBE6",
+        "color2": "#9CB4DD",
+        "color3": "#9A99A1",
+        "color4": "#8AB1D9",
+        "color5": "#D3BCBD",
+        "color6": "#78ACDF",
+        "color7": "#e3e3e6",
+        "color8": "#38323c",
+        "color9": "#c1ffff",
+        "color10": "#b2e3ff",
+        "color11": "#b8b2e5",
+        "color12": "#9ce5ff",
+        "color13": "#ffd6da",
+        "color14": "#85dfff",
+        "color15": "#fdfdff"
+    }
+}
