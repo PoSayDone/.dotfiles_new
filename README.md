@@ -2,13 +2,10 @@
 ![dotfiles_v2](https://user-images.githubusercontent.com/29358657/164911753-58d37470-6ae5-4bc8-b492-52f0ecda795a.png)
 
 ## Installation
-- Before running installation command, backup all your existing configs.
-- After you have made a backup, delete these folders from .config: bspwm. sxhkd, wpg, ranger.
-- Now you are ready to start.
-
 ```bash
 curl -s -L https://raw.githubusercontent.com/PoSayDone/.dotfiles_new/main/install.sh | bash
 ```
+
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/29358657/165128797-7b88504d-ae6a-4ee5-9309-87fe5dd8f7ec.png)
 ![image](https://user-images.githubusercontent.com/29358657/165129082-6813b74d-7389-48f1-846f-2aca4166289e.png)
