@@ -148,7 +148,14 @@ bspapps () {{
   exec zathura-pywal -a 0.5 &
 }}
 
-
+bspstartpage () {{
+	cat > $DIR/startpage/css/colors.css <<- EOF	
+	:root {{
+          --bg-color: ${{BACKGROUND}}f3;
+          --text-color: ${{ALTBLUE}};
+	}}
+	EOF
+}}
 
 main () {{
 	getcolors
@@ -158,6 +165,7 @@ main () {{
 	bspdunst
   bspvscode
   bspcss
+  bspstartpage
   bspapps
 }}
 

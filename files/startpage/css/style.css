@@ -1,0 +1,64 @@
+@import url('./colors.css');
+
+body  {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("/home/posaydone/.config/wpg/.current");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  font-family: 'Cartograph CF', monospace;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.container ul {
+  color: var(--text-color);
+  margin: 0;
+}
+
+.container li {
+  text-align: center;
+  list-style-type: none;
+}
+
+.container li > a{
+  font-weight: 600;
+  font-size: 30px;
+  text-decoration: inherit;
+  color: var(--text-color);
+}
+
+.greeting{
+  text-shadow: #000 1px 0 10px;
+}
+
+.links {
+  display: flex;
+  gap: 60px;
+  padding: 20px 40px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+}
+
+.links li {
+  display: inline-flex;
+}
+
+li i {
+  font-size: 25px;
+  margin: auto;
+  margin-right: 5px;
+}

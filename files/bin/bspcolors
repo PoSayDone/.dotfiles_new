@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#eeffff"
-	BACKGROUND="#131819"
+	FOREGROUND="#fffff1"
+	BACKGROUND="#1a1510"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#131819"
-	RED="#95B6D3"
-	GREEN="#6C8EA5"
-	YELLOW="#D1C2A7"
-	BLUE="#4188BC"
-	MAGENTA="#9AA2A6"
-	CYAN="#63A2D1"
-	WHITE="#cbdce7"
-	ALTBLACK="#283335"
-	ALTRED="#aaeeff"
-	ALTGREEN="#7abce8"
-	ALTYELLOW="#ffffc0"
-	ALTBLUE="#44b3ff"
-	ALTMAGENTA="#b3d9ec"
-	ALTCYAN="#6cd5ff"
-	ALTWHITE="#eeffff"
+	BLACK="#1a1510"
+	RED="#AA9670"
+	GREEN="#C8B893"
+	YELLOW="#C5A06D"
+	BLUE="#D4C59E"
+	MAGENTA="#CAB6A6"
+	CYAN="#B1A18D"
+	WHITE="#e2dccc"
+	ALTBLACK="#392e22"
+	ALTRED="#efc87f"
+	ALTGREEN="#fff8a8"
+	ALTYELLOW="#ffd379"
+	ALTBLUE="#ffffb5"
+	ALTMAGENTA="#ffe9bf"
+	ALTCYAN="#fad3a2"
+	ALTWHITE="#fffff1"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #80131819
-  active = #368fcb
-  inactive = #25628b
+	background = #801a1510
+  active = #cbcb90
+  inactive = #8c8c63
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -91,13 +91,13 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#13181980",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#1a151080",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#13181980;
+		background:			#1a151080;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		selected:			${BLUE};
@@ -136,7 +136,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #13181980;
+		--bg-color: #1a151080;
 	}
 	EOF
 }
@@ -148,7 +148,14 @@ bspapps () {
   exec zathura-pywal -a 0.5 &
 }
 
-
+bspstartpage () {
+	cat > $DIR/startpage/css/colors.css <<- EOF	
+	:root {
+          --bg-color: ${BACKGROUND}f3;
+          --text-color: ${ALTBLUE};
+	}
+	EOF
+}
 
 main () {
 	getcolors
@@ -158,6 +165,7 @@ main () {
 	bspdunst
   bspvscode
   bspcss
+  bspstartpage
   bspapps
 }
 
