@@ -153,8 +153,8 @@ super + {Tab,grave}
 	bspc {node,desktop} -f last
 
 # Send focused window to another workspace
-super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
 
 # Expanding windows
 super + control + {Left,Right,Up,Down}

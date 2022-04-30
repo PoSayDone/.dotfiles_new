@@ -34,7 +34,7 @@ bspbar () {{
 	[colors]
 
 	foreground = ${{FOREGROUND}}
-	background = #80{color0.strip}
+	background = #B3{color0.strip}
   active = {active}
   inactive = {inactive}
 	black = ${{BLACK}}
@@ -91,13 +91,13 @@ bspterm () {{
 
 #code-transparent needed
 bspvscode () {{
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"{color0}80",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"{color0}B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }}
 
 bsprofi () {{
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {{
-		background:			{color0}80;
+		background:			{color0}B3;
     background-alt: #00000000;
 		foreground:			${{FOREGROUND}};
 		selected:			${{BLUE}};
@@ -114,19 +114,19 @@ bspdunst () {{
 	cat >> "$HOME"/.config/bspwm/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
-    background = "${{BACKGROUND}}80"
+    background = "${{BACKGROUND}}B3"
     foreground = "${{FOREGROUND}}"
 		frame_color = "${{BLUE}}"
 
 		[urgency_normal]
 		timeout = 5
-    background = "${{BACKGROUND}}80"
+    background = "${{BACKGROUND}}B3"
     foreground = "${{FOREGROUND}}"
 		frame_color = "${{BLUE}}"
 
 		[urgency_critical]
 		timeout = 0
-    background = "${{BACKGROUND}}80"
+    background = "${{BACKGROUND}}B3"
     foreground = "${{FOREGROUND}}"
 		frame_color = "${{RED}}"
 	_EOF_
@@ -136,7 +136,7 @@ bspdunst () {{
 bspcss () {{
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {{
-		--bg-color: {color0}80;
+		--bg-color: {color0}B3;
 	}}
 	EOF
 }}
@@ -151,7 +151,8 @@ bspapps () {{
 bspstartpage () {{
 	cat > $DIR/startpage/css/colors.css <<- EOF	
 	:root {{
-          --bg-color: ${{BACKGROUND}}f3;
+          --bg-color: ${{BACKGROUND}}b3;
+          --bg-color_solid: ${{BACKGROUND}};
           --text-color: ${{ALTBLUE}};
 	}}
 	EOF

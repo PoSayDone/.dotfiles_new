@@ -18,8 +18,8 @@ env:
 ## Terminal window settings
 window:
   dimensions:
-    columns: 82
-    lines: 25
+    columns: 0
+    lines: 0
 
   padding:
     x: 10
@@ -27,13 +27,14 @@ window:
 
   decorations: none
   dynamic_title: true
+  dynamic_padding: true
 
 ## scrolling
   history: 10000
   multiplier: 3
 
 ## Background opacity
-  opacity: 0.5
+  opacity: 0.7
 
 ## Cursor
 cursor:
