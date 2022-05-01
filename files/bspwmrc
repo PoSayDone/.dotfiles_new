@@ -92,13 +92,16 @@ bspc rule -a 'VirtualBox Manager' desktop='^8' follow=on focus=on
 bspc rule -a GParted desktop='^8' follow=on focus=on
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 System-config-printer.py Pavucontrol Exo-helper-1 \
-Xfce4-power-manager-settings)
+Xfce4-power-manager-settings )
 for i in ${settings[@]}; do
    bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
 
+# 9 > games
+bspc rule -a 'steam_app_1293830' state=fullscreen
+
 # special rules
 declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
-Viewnior feh Nm-connection-editor Wpg Skype skype)
+Viewnior feh Nm-connection-editor Wpg Skype skype Steam zoom)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
