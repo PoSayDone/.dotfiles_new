@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-jonaburg-fix' 'xfce-polkit' 'xfce4-power-manager''xsettingsd''xorg-xsetroot' 'wmname' 'lunarvim-git' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' &
+yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-jonaburg-fix' 'xfce-polkit' 'xfce4-power-manager''xsettingsd''xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'nvim' 'qutebrowser'&
 BACK_PID=$!
 wait $BACK_PID
 
@@ -19,7 +19,6 @@ ln -sf $HOME/.config/bspwm/ranger $HOME/.config/
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
 fc-cache -r
-rm -rf $HOME/tmpdotfiles
 cd $HOME
 
 #Zathura
@@ -33,4 +32,11 @@ rm -rf zathura-pywal
 curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/master/install.sh | bash -s -- stable
 echo "Please, specify your path to colors.css in ~/.mozilla/firefox/...default-release/chrome/colores/blurred.css"
 
+git clone https://github.com/NvChad/NvChad $HOME/config/nvim --depth 1
+ln -sf $HOME/tmpdotfiles/files/nvchad/custom $HOME/.config/nvim/lua/
+
+git clone https://github.com/makman12/pywalQute.git $HOME/.config/qutebrowser/pywalQute/
+ln -sf $HOME/tmpdotfiles/files/qutebrowser/config.py $HOME/.config/qutebrowser/
+
+rm -rf $HOME/tmpdotfiles
 wpg -ns 18.jpg
