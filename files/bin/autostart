@@ -1,6 +1,13 @@
 #!/bin/sh
-killall polybar; exec polybar bspwm -c $HOME/.config/bspwm/polybar/config.ini &
+DIR="$HOME/.config/bspwm/polybar"
 $HOME/.config/wpg/wp_init.sh &
+
+if [[ ! `pidof polybar` ]]; 
+then
+  polybar -q bspwm -c "$DIR"/config.ini &
+else
+  polybar-msg cmd restart
+fi
 
 if ps ax | grep -v grep | grep discord > /dev/null
 then

@@ -40,3 +40,4 @@ c.url.default_page = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 
 c.content.local_content_can_access_remote_urls = True
 c.scrolling.smooth = True
+c.qt.workarounds.remove_service_workers = True

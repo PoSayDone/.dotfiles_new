@@ -146,6 +146,7 @@ bspapps () {{
   exec python3 $DIR/scripts/wal-telegram/pallete-gen.py &
   exec pywal-discord &
   exec zathura-pywal -a 0.5 &
+  exec qutebrowser :config-source &
 }}
 
 bspstartpage () {{
