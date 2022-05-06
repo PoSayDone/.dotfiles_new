@@ -6,11 +6,11 @@ wait $BACK_PID
 
 echo "Cloning dotfiles"
 cd $HOME
-git clone https://github.com/PoSayDone/.dotfiles_new.git tmpdotfiles
+git clone https://github.com/PoSayDone/.dotfiles_new.git
 rm -rf $HOME/.config/bspwm $HOME/.config/wpg $HOME/.config/sxhkd $HOME/.config/ranger
-cd tmpdotfiles
+cd .dotfiles_new
 cp files/.Xresources files/.xsettingsd $HOME
-cp -r files/ $HOME/.config/bspwm
+ln -sf $HOME/.dotfiles_new/files/ $HOME/.config/bspwm
 cd $HOME/.config/bspwm/
 ln -sf $HOME/.config/bspwm/wpg $HOME/.config/
 wpg-install.sh -g
@@ -33,10 +33,9 @@ curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/master/instal
 echo "Please, specify your path to colors.css in ~/.mozilla/firefox/...default-release/chrome/colores/blurred.css"
 
 git clone https://github.com/NvChad/NvChad $HOME/config/nvim --depth 1
-ln -sf $HOME/tmpdotfiles/files/nvchad/custom $HOME/.config/nvim/lua/
+ln -sf $HOME/.dotfiles_new/files/nvchad/custom $HOME/.config/nvim/lua/
 
 git clone https://github.com/makman12/pywalQute.git $HOME/.config/qutebrowser/pywalQute/
-ln -sf $HOME/tmpdotfiles/files/qutebrowser/config.py $HOME/.config/qutebrowser/
+ln -sf $HOME/.dotfiles_new/files/qutebrowser/config.py $HOME/.config/qutebrowser/
 
-rm -rf $HOME/tmpdotfiles
-wpg -ns 18.jpg
+wpg -ns 13.jpg
