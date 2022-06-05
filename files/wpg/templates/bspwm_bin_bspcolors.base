@@ -145,7 +145,7 @@ bspcss () {{
 bspapps () {{
   exec python3 $DIR/scripts/wal-telegram/pallete-gen.py &
   exec pywal-discord &
-  exec zathura-pywal -a 0.5 &
+  exec zathura-pywal -a 0.7 &
   exec qutebrowser :config-source &
 }}
 
@@ -154,7 +154,7 @@ bspstartpage () {{
 	:root {{
           --bg-color: ${{BACKGROUND}}b3;
           --bg-color_solid: ${{BACKGROUND}};
-          --text-color: ${{ALTBLUE}};
+          --text-color: ${{RED}};
 	}}
 	EOF
 }}

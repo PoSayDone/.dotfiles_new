@@ -41,3 +41,8 @@ c.url.default_page = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 c.content.local_content_can_access_remote_urls = True
 c.scrolling.smooth = True
 c.qt.workarounds.remove_service_workers = True
+
+config.unbind('.')
+en_keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./"+'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'
+ru_keys = 'йцукенгшщзхъфывапролджэячсмитьбю.'+'ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ,'
+c.bindings.key_mappings.update(dict(zip(ru_keys, en_keys)))

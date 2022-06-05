@@ -110,9 +110,9 @@ ctrl + alt + Escape
 ctrl + shift + {q,r}
 	bspc {quit,wm -r}
 	
-# Split horizontal, vertical or cancel
-super + {left,v,q}
-	bspc node -p {east,south,cancel}
+# preselect the direction
+super + ctrl + {h,j,k,l,q}
+	bspc node -p {west,south,north,east,cancel}
 
 # Preselect the ratio
 super + ctrl + {1-9}

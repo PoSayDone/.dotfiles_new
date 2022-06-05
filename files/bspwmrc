@@ -5,10 +5,7 @@
 
 ## Environtment
 export PATH="${PATH}:$HOME/.config/bspwm/bin"
-xset r rate 300 50
-
-## Get colors from .Xresources -------------------------------#
-xrdb ~/.Xresources
+xset r rate 300 50 ## Get colors from .Xresources -------------------------------# xrdb ~/.Xresources
 getcolors() {
 	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
 	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
@@ -113,7 +110,7 @@ bspc rule -a stalonetray state=floating manage=off
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc
+killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc 
 
 # Lauch xsettingsd daemon
 xsettingsd &
@@ -140,8 +137,8 @@ xsetroot -cursor_name left_ptr
 bash $HOME/.fehbg
 
 # Start bspwm scripts
+autostart
 bspcolors
 bspcomp
 bspdunst
-autostart
 bspfloat
