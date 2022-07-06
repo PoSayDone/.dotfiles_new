@@ -16,5 +16,5 @@ if ps ax | grep -v grep | grep picom > /dev/null
 then
   echo "..."
 else
-  picom --config ~/.config/bspwm/picom.conf &
+  picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 fi
