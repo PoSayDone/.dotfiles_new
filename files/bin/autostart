@@ -22,3 +22,10 @@ then
 else
     exec kotatogram-desktop &
 fi
+
+if ps ax | grep -v grep | grep gxkb > /dev/null
+then
+    echo "gxkb service running, everything is fine"
+else
+    exec gxkb &
+fi

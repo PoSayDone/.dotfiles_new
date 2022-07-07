@@ -3,39 +3,38 @@
 @import "colors.rasi"
 
 * {
-    background-color:       @background-alt;
-    text-color:             @foreground;
-    font:				 	"Cartograph CF 12";
+	background-color: @background-alt;
+	text-color: @foreground;
+	font: "SF Pro Display 12";
 }
 
 window {
-    background-color:       @background;
-    width:      			      225px;
-    padding:    			      25px;
-    border:					        0px;
-    border-radius:          0px;
-    border-color:           @accent;
-    location:               center;
-    y-offset:               -20px;
+	background-color: @background;
+	width: 225px;
+	padding: 25px;
+	border: 0px;
+	border-radius: 0px;
+	border-color: @accent;
+	location: center;
+	y-offset: -20px;
 }
 
 entry {
-    expand: 				true;
-    text-color:				@accent;
+	expand: true;
+	text-color: @accent;
 }
 
 element {
-    background-color:               @background-light;
-    text-color:                     @foreground;
-    orientation:                    vertical;
-    border-radius:                  10px;
+	background-color: @background-light;
+	text-color: @foreground;
+	orientation: vertical;
+	border-radius: 10px;
 }
 
 element-text {
-  background-color:                 @background-alt;
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0;
-    margin:                         17px 10px 26px 10px;
+	background-color: @background-alt;
+	expand: true;
+	horizontal-align: 0.5;
+	vertical-align: 0;
+	margin: 17px 10px 26px 10px;
 }
-

@@ -3,22 +3,22 @@
 @import "colors.rasi"
 
 * {
-    background-color:       @background;
-    text-color:             @foreground;
-    font:				 	          "Cartograph CF 12";
+	background-color: @background;
+	text-color: @foreground;
+	font: "SF Pro Display 12";
 }
 
 window {
-    width:      			      360px;
-    padding:    			      25px;
-    border:					        0px;
-    border-radius:          0px;
-    border-color:           @accent;
-    location:               center;
-    y-offset:               -20px;
+	width: 360px;
+	padding: 25px;
+	border: 0px;
+	border-radius: 0px;
+	border-color: @accent;
+	location: center;
+	y-offset: -20px;
 }
 
 entry {
-    expand: 				        true;
-    text-color:				      @accent;
+	expand: true;
+	text-color: @accent;
 }

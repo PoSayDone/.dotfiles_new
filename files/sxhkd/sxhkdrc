@@ -5,7 +5,7 @@
 
 # Terminal (alacritty)
 super + Return
-	bspterm
+	st
 
 # Terminal (floating)
 super + shift + Return
@@ -37,11 +37,11 @@ super + {w,x,s}
 
 # Launch Apps
 super + shift + {f,w,e}
-	{pcmanfm,firefox,geany}
+	{st,firefox,geany}
 
 # Terminal Apps
 ctrl + alt + {v,n,r,h,b}
-	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e {lvim,nvim,ranger,htop,bashtop}
+	st -e {lvim,nvim,ranger,htop,bashtop}
 
 # Color Picker
 super + p

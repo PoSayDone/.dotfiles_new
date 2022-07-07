@@ -4,6 +4,8 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Environtment
+pgrep bspswallow || bspswallow &
+
 export PATH="${PATH}:$HOME/.config/bspwm/bin"
 xset r rate 300 50 ## Get colors from .Xresources -------------------------------# xrdb ~/.Xresources
 getcolors() {
@@ -50,7 +52,7 @@ bspc config pointer_motion_interval 10
 ## Window rules ----------------------------------------------#
 
 # 1 > terminal
-bspc rule -a Alacritty desktop='^1' follow=on focus=on rectangle=1380x898+0+0 state=pseudo_tiled
+bspc rule -a St desktop='^1' follow=on focus=on rectangle=1380x898+0+0 state=pseudo_tiled
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web

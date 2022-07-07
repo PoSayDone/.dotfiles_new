@@ -10,106 +10,106 @@
 @import "colors.rasi"
 
 configuration {
-  font:                 "Cartograph CF DemiBold 11";
-  show-icons:           true;
-  icon-theme:           "Papirus";
-  display-window:       "";
-  sidebar-mode:         false;
+	font: "SF Pro Display Medium 11";
+	show-icons: true;
+	icon-theme: "Papirus";
+	display-window: "";
+	sidebar-mode: false;
 }
 
 window {
-  transparency:                 "real";
-  background-color:             @background;
-  text-color:                   @foreground;
-  border:			0px;
-  border-color:                 @border;
-  border-radius:                10px;
-  width:                        40%;
-  location:                     center;
-  x-offset:                     0;
-  y-offset:                     0;
+	transparency: "real";
+	background-color: @background;
+	text-color: @foreground;
+	border: 0px;
+	border-color: @border;
+	border-radius: 10px;
+	width: 40%;
+	location: center;
+	x-offset: 0;
+	y-offset: 0;
 }
 
 prompt {
-    enabled: 				true;
-	padding: 			0% 1% 0% -0.5%;
-	background-color: 		@background-alt;
-	text-color: 			@foreground;
-	font:				"FantasqueSansMono Nerd Font 12";
+	enabled: true;
+	padding: 0% 1% 0% -0.5%;
+	background-color: @background-alt;
+	text-color: @foreground;
+	font: "SF Pro Display 11";
 }
 
 entry {
-    background-color:               @background-alt;
-    text-color:                     @foreground;
-    placeholder-color:              @foreground;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search";
-    padding:                        0.10% 0% 0% 0%;
-    blink:                          true;
+	background-color: @background-alt;
+	text-color: @foreground;
+	placeholder-color: @foreground;
+	expand: true;
+	horizontal-align: 0;
+	placeholder: "Search";
+	padding: 0.10% 0% 0% 0%;
+	blink: true;
 }
 
 inputbar {
-  children:                     [ prompt, entry ];
-  background-color:             @background;
-  text-color:                     @foreground;
-  expand:                         false;
-  border:							0% 0% 0% 0%;
-  border-radius:                  10px;
-  border-color:					@accent;
-  margin:                         0% 0% 0% 0%;
-  padding:                        1.5%;
+	children: [ prompt, entry];
+	background-color: @background;
+	text-color: @foreground;
+	expand: false;
+	border: 0% 0% 0% 0%;
+	border-radius: 10px;
+	border-color: @accent;
+	margin: 0% 0% 0% 0%;
+	padding: 1.5%;
 }
 
 listview {
-    background-color:               @background-alt;
-    columns:                        1;
-    lines:                          7;
-    spacing:                        1%;
-    cycle:                          false;
-    dynamic:                        true;
-    layout:                         vertical;
+	background-color: @background-alt;
+	columns: 1;
+	lines: 7;
+	spacing: 1%;
+	cycle: false;
+	dynamic: true;
+	layout: vertical;
 }
 
 mainbox {
-    background-color:               @background-alt;
-	border:							0% 0% 0% 0%;
-    border-radius:                  0% 0% 0% 0%;
-	border-color:					@accent;
-    children:                       [ inputbar, listview ];
-    spacing:                       	2%;
-    padding:                        2% 1% 2% 1%;
+	background-color: @background-alt;
+	border: 0% 0% 0% 0%;
+	border-radius: 0% 0% 0% 0%;
+	border-color: @accent;
+	children: [ inputbar, listview];
+	spacing: 2%;
+	padding: 2% 1% 2% 1%;
 }
 
 element {
-    background-color:               @background-alt;
-    text-color:                     @foreground;
-    orientation:                    horizontal;
-    border-radius:                  0%;
-    padding:                        1% 0% 1% 0%;
+	background-color: @background-alt;
+	text-color: @foreground;
+	orientation: horizontal;
+	border-radius: 0%;
+	padding: 1% 0% 1% 0%;
 }
 
 element-icon {
-    background-color: 				@background-alt;
-    text-color:       				inherit;
-    horizontal-align:               0;
-    vertical-align:                 0;
-    margin:                         0px  0px  0px 16px;
-    size:                           32px;
-    border:                         0px;
+	background-color: @background-alt;
+	text-color: inherit;
+	horizontal-align: 0;
+	vertical-align: 0;
+	margin: 0px 0px 0px 16px;
+	size: 32px;
+	border: 0px;
 }
 
 element-text {
-    background-color: 				@background-alt;
-    text-color:       				inherit;
-    expand:                         true;
-    margin:                         1% 0.5% 0.5% 2%;
+	background-color: @background-alt;
+	text-color: inherit;
+	expand: true;
+	margin: 0.7% 0.5% 0.5% 2%;
 }
 
 element selected {
-    background-color:               @background;
-    text-color:                     @foreground;
-	border:							0% 0% 0% 0%;
-    border-radius:                  10px;
-    border-color:                  	@selected;
+	background-color: @background;
+	text-color: @foreground;
+	border: 0% 0% 0% 0%;
+	border-radius: 10px;
+	border-color: @selected;
 }
