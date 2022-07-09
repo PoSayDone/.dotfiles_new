@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-jonaburg-fix' 'xfce-polkit' 'xfce4-power-manager' 'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'neovim' 'qutebrowser'
+yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-animations-git' 'xfce-polkit' 'xfce4-power-manager' 'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'neovim' 'qutebrowser'
 BACK_PID=$!
 wait $BACK_PID
 

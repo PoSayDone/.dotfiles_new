@@ -2,7 +2,7 @@
 DIR="$HOME/.config/bspwm/polybar"
 $HOME/.config/wpg/wp_init.sh &
 
-if [[ ! `pidof polybar` ]]; 
+if [[ ! `pidof polybar` ]];
 then
   polybar -q bspwm -c "$DIR"/config.ini &
 else

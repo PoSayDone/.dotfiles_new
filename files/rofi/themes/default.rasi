@@ -10,7 +10,7 @@
 @import "colors.rasi"
 
 configuration {
-	font: "SF Pro Display Medium 11";
+	font: "SF Pro Display Semibold 11";
 	show-icons: true;
 	icon-theme: "Papirus";
 	display-window: "";
@@ -35,7 +35,7 @@ prompt {
 	padding: 0% 1% 0% -0.5%;
 	background-color: @background-alt;
 	text-color: @foreground;
-	font: "SF Pro Display 11";
+	font: "JetBrainsMono Nerd Font Mono Bold 11";
 }
 
 entry {
@@ -58,7 +58,7 @@ inputbar {
 	border-radius: 10px;
 	border-color: @accent;
 	margin: 0% 0% 0% 0%;
-	padding: 1.5%;
+	padding: 1.5% 1.5% 1.5% 2%;
 }
 
 listview {
@@ -94,7 +94,7 @@ element-icon {
 	text-color: inherit;
 	horizontal-align: 0;
 	vertical-align: 0;
-	margin: 0px 0px 0px 16px;
+	margin: 0px 0px 0px 20px;
 	size: 32px;
 	border: 0px;
 }
@@ -103,7 +103,7 @@ element-text {
 	background-color: @background-alt;
 	text-color: inherit;
 	expand: true;
-	margin: 0.7% 0.5% 0.5% 2%;
+	margin: 0.65% 0.5% 0.5% 1.5%;
 }
 
 element selected {

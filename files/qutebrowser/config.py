@@ -38,8 +38,8 @@ c.url.searchengines = {
 c.url.start_pages = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 c.url.default_page = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 
-c.fonts.tabs.selected = "Bold default_size default_family"
-c.fonts.tabs.unselected = "default_size default_family"
+c.fonts.tabs.selected = "500 default_size default_family"
+c.fonts.tabs.unselected = "400 default_size default_family"
 
 c.content.local_content_can_access_remote_urls = True
 c.scrolling.smooth = True

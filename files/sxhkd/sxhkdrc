@@ -27,7 +27,7 @@ super + n
 
 # Rofi Themes Menu
 ctrl + alt + t
-	sh ~/.config/bspwm/rofi/bin/themes
+	killall polybar && polybar -q bspwm -c /home/posaydone/.config/bspwm/polybar/config.ini 
 
 # Rofi Menus/Applets
 super + {w,x,s}
