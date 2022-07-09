@@ -1,0 +1,96 @@
+# Basic Settings
+set previewer lf-ueberzug-previewer
+set cleaner lf-ueberzug-cleaner
+
+set shell zsh
+set shellopts '-euy'
+set ifs "\n"
+set ignorecase true
+set icons
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# Execute exe
+cmd execute ${{
+	wine "$f"
+}}
+
+# Trash bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trash-put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd restore_trash ${{
+  trash-restore
+}}
+
+# Bindings
+# Remove some defaults
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+
+map c $nvim "$f"
+
+map au unarchive
+map ae execute
+
+# Basic Functions
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map mf mkfile
+map md mkdir
+map bg setwallpaper
+map C clear
+
+map dd trash
+map dr restore_trash
+
+# Movement
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gs cd ~/.local/share

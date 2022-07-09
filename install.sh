@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-animations-git' 'xfce-polkit' 'xfce4-power-manager' 'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'neovim' 'qutebrowser'
+yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen' 'picom-animations-git' 'xfce-polkit' 'xfce4-power-manager' 'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-jetbrains-mono'
 BACK_PID=$!
 wait $BACK_PID
 
@@ -15,6 +15,7 @@ cd $HOME/.config/bspwm/
 ln -sf $HOME/.config/bspwm/wpg $HOME/.config/
 wpg-install.sh -g
 ln -sf $HOME/.config/bspwm/sxhkd $HOME/.config/
+ln -sf $HOME/.config/bspwm/lf $HOME/.config/
 ln -sf $HOME/.config/bspwm/ranger $HOME/.config/
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
