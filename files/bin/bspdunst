@@ -5,4 +5,4 @@ if [[ `pidof dunst` ]]; then
 	pkill dunst
 fi
 
-dunst -config ~/.config/bspwm/dunstrc &
+dunst -config ~/.config/bspwm/dunst/dunstrc

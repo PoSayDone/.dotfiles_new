@@ -58,7 +58,7 @@ inputbar {
 	border-radius: 10px;
 	border-color: @accent;
 	margin: 0% 0% 0% 0%;
-	padding: 1.5% 1.5% 1.5% 2%;
+	padding: 1.5% 1.5% 1.5% 1.78%;
 }
 
 listview {

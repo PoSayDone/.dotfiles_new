@@ -2,6 +2,8 @@ local M = {}
 
 local plugin_conf = require "custom.plugins.configs"
 local userPlugins = require "custom.plugins"
+local userMappings = require "custom.mappings"
+local userHighlights = require "custom.highlights"
 
 M.plugins = {
    status = {
@@ -12,19 +14,23 @@ M.plugins = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
+
    },
 
    override = {
       ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
-      ["nvim-treesitter/nvim-treesitter"] = plugin_conf.treesitter,
    },
 
    user = userPlugins,
 }
 
 M.ui = {
-   transparency = true,
-   theme = "doom-chad",
+  theme = "onedark",
+  transparency = true,
+  hl_override = userHighlights,
+  theme_toggle = { "onedark", "one_light" },
 }
+
+M.mappings = userMappings
 
 return M

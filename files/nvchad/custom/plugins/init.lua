@@ -1,4 +1,22 @@
 return {
+   ["nvim-treesitter/nvim-treesitter"] = {
+      event = { "BufRead", "BufNewFile" },
+      run = ":TSUpdate",
+      config = function()
+         require "custom.plugins.treesitter"
+      end,
+   },
+
+  ["natecraddock/workspaces.nvim"] = {
+    config = function()
+      require("workspaces").setup{
+        hooks = {
+            open = {"Telescope find_files"},
+        },
+      }
+    end,
+  },
+
   ["folke/persistence.nvim"] = {
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
     module = "persistence",
@@ -6,25 +24,6 @@ return {
       require("persistence").setup()
     end,
   },
-
-  ["folke/which-key.nvim"] = {
-    config = function()
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end,
-  },
-
-  ["karb94/neoscroll.nvim"] = {
-     config = function()
-        require("neoscroll").setup()
-     end,
-     setup = function()
-       require("core.utils").packer_lazy_load "neoscroll.nvim"
-     end,
-   },
 
    ["Pocco81/AutoSave.nvim"] = {
    config = function()
@@ -45,10 +44,6 @@ return {
    end,
   },
 
-  ["luukvbaal/stabilize.nvim"] = {
-      config = function() require("stabilize").setup() end
-  },
-
   ["goolord/alpha-nvim"] = {
     disable = false,
     config = function()
@@ -57,6 +52,14 @@ return {
   },
 
    ["williamboman/nvim-lsp-installer"] = {
+
+   },
+
+   ["nvim-treesitter/playground"] = {
+
+   },
+
+   ["p00f/nvim-ts-rainbow"] = {
 
    },
 
@@ -83,10 +86,15 @@ return {
                media_files = {
                   filetypes = { "png", "webp", "jpg", "jpeg" },
                },
+
+               workspaces = {
+                 keep_insert = true,
+               },
                -- fd is needed
             },
          }
          require("telescope").load_extension "media_files"
+         require("telescope").load_extension "workspaces"
       end,
    },
 

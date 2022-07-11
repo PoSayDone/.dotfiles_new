@@ -4,8 +4,6 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ## Environtment
-pgrep bspswallow || bspswallow &
-
 export PATH="${PATH}:$HOME/.config/bspwm/bin"
 xset r rate 300 50 ## Get colors from .Xresources -------------------------------# xrdb ~/.Xresources
 getcolors() {
@@ -51,7 +49,7 @@ bspc config pointer_motion_interval 10
 ## Window rules ----------------------------------------------#
 
 # 1 > terminal
-bspc rule -a St desktop='^1' follow=on focus=on rectangle=1380x898+0+0 state=pseudo_tiled
+bspc rule -a st-256color desktop='^1' follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web
@@ -103,8 +101,8 @@ Viewnior feh Nm-connection-editor Wpg Skype skype Steam zoom)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
-bspc rule -a ranger follow=on focus=on rectangle=1380x898+0+0 state=pseudo_tiled
-bspc rule -a nvim follow=on focus=on rectangle=1380x898+0+0 state=pseudo_tiled
+bspc rule -a ranger follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
+bspc rule -a nvim follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
@@ -142,5 +140,5 @@ autostart
 bspcolors
 bspcomp
 bspdunst
-bspfloat
 bspbar
+bspfloat

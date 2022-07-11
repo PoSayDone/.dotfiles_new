@@ -110,10 +110,6 @@ ctrl + alt + Escape
 ctrl + shift + {q,r}
 	bspc {quit,wm -r}
 	
-# preselect the direction
-super + ctrl + {h,j,k,l,q}
-	bspc node -p {west,south,north,east,cancel}
-
 # Preselect the ratio
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
@@ -149,21 +145,25 @@ ctrl + alt + {Left,Right}
 	bspc desktop -f {prev.local,next.local}
 
 # Switch to last opened workspace
-super + {Tab,grave}
-	bspc {node,desktop} -f last
+super + Tab
+	bspc desktop -f last
 
 # Send focused window to another workspace
 super + {_,shift + }{1-9}
 	bspc {desktop -f,node -d} '^{1-9}'
 
 # Expanding windows
-super + control + {Left,Right,Up,Down}
+super + control + {h,l,k,j}
 	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
 	
 ## Shrinking windows
-super + alt + {Left,Right,Up,Down}
+super + alt + {h,l,k,j}
 	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
 	
+# preselect the direction
+super + control + {Left,Right,Up,Down}
+	bspc node -p {west,south,north,east,cancel}
+
 ## Move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}

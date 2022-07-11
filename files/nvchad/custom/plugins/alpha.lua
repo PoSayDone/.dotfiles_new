@@ -72,7 +72,7 @@ end
 local buttons = {
     type = "group",
     val = {
-        button(" n ", "  New File  ", ":enew<CR>"),
+        button(" w ", "  Workspaces  ", ":Telescope workspaces<CR>"),
         button(" f ", "  Find File  ", ":Telescope find_files<CR>"),
         button(" r ", "  Recent Files  ", ":Telescope oldfiles<CR>"),
         button(" l ", "  Load last session  ", ":lua require('persistence').load({ last = true })<CR>"),

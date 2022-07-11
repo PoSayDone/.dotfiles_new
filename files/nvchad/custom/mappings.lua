@@ -1,10 +1,13 @@
-local map = require("core.utils").map
+-- custom.mappings
 
--- telescope
-map("n", "<leader>fp", ":Telescope media_files <CR>")
-map("n", "<leader>te", ":Telescope <CR>")
+local M = {}
 
--- truezen
-map("n", "<leader>ta", ":TZAtaraxis <CR>")
-map("n", "<leader>tm", ":TZMinimalist <CR>")
-map("n", "<leader>tf", ":TZFocus <CR>")
+M.workspaces = {
+   n = {
+       ["<leader>wa"] = { "<cmd> WorkspacesAdd<CR>", "   add workspace folder" },
+       ["<leader>wr"] = { "<cmd> WorkspacesRemove<CR>", "   remove workspace folder" },
+       ["<leader>wl"] = { "<cmd> Telescope workspaces<CR>","   list workspace folders" },
+   },
+}
+
+return M
