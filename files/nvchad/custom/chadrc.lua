@@ -1,24 +1,26 @@
 local M = {}
 
-local plugin_conf = require "custom.plugins.configs"
 local userPlugins = require "custom.plugins"
 local userMappings = require "custom.mappings"
 local userHighlights = require "custom.highlights"
+local override = require "custom.override"
 
 M.plugins = {
+
+  options = {
+      lspconfig = {
+        setup_lspconf = "custom.plugins.lspconfig",
+      },
+  },
+
    status = {
      alpha =true
    },
 
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-
-   },
-
    override = {
-      ["kyazdani42/nvim-tree.lua"] = plugin_conf.nvimtree,
+      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+      ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
    },
 
    user = userPlugins,

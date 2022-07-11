@@ -1,12 +1,4 @@
 return {
-   ["nvim-treesitter/nvim-treesitter"] = {
-      event = { "BufRead", "BufNewFile" },
-      run = ":TSUpdate",
-      config = function()
-         require "custom.plugins.treesitter"
-      end,
-   },
-
   ["natecraddock/workspaces.nvim"] = {
     config = function()
       require("workspaces").setup{
@@ -34,7 +26,7 @@ return {
          events = { "InsertLeave", "TextChanged" },
          conditions = {
             exists = true,
-            filetype_is_not = {},
+            filetype_is_not = {"css", "html", "php"},
             modifiable = true,
          },
          clean_command_line_interval = 2500,

@@ -5,7 +5,7 @@
 
 # Terminal (alacritty)
 super + Return
-	st
+	st_pad && st
 
 # Terminal (floating)
 super + shift + Return

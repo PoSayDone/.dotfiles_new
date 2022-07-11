@@ -58,6 +58,19 @@ return   {
     italic = true,
   },
 
+  NvimTreeNormal = {
+    bg = "black"
+  },
+
+  NvimTreeNormalNC = {
+    bg = "black"
+  },
+
+  NvimTreeWinSeparator = {
+    bg = "black",
+    fg = "black",
+  },
+
   Type = { italic = true },
   SpecialComment = { italic = true },
   TSAttribute = { italic = true },

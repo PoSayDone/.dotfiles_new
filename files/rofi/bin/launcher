@@ -13,6 +13,6 @@ rofi \
 	-drun-match-fields all \
 	-drun-display-format "{name}" \
 	-no-drun-show-actions \
-	-terminal alacritty \
+	-terminal st \
 	-theme "$DIR"/rofi/themes/default.rasi
 	-kb-cancel Alt-F1 \

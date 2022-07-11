@@ -22,8 +22,8 @@ window:
     lines: 0
 
   padding:
-    x: 20
-    y: 20
+    x: 2110
+    y: 210
 
   decorations: none
   dynamic_title: true
