@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#e9ffff"
-	BACKGROUND="#101615"
+	FOREGROUND="#fff5e9"
+	BACKGROUND="#0e0f16"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#101615"
-	RED="#546899"
-	GREEN="#648EA8"
-	YELLOW="#5FA7DD"
-	BLUE="#3A8DD6"
-	MAGENTA="#A0ADBE"
-	CYAN="#75C6E9"
-	WHITE="#c7e3ec"
-	ALTBLACK="#243330"
-	ALTRED="#5d80d6"
-	ALTGREEN="#70bceb"
-	ALTYELLOW="#66dcff"
-	ALTBLUE="#39b8ff"
-	ALTMAGENTA="#b9ddff"
-	ALTCYAN="#81ffff"
-	ALTWHITE="#e9ffff"
+	BLACK="#0e0f16"
+	RED="#556687"
+	GREEN="#335B84"
+	YELLOW="#BD8A7B"
+	BLUE="#37638D"
+	MAGENTA="#8C7C85"
+	CYAN="#4A6990"
+	WHITE="#e4cbc1"
+	ALTBLACK="#212334"
+	ALTRED="#6080bd"
+	ALTGREEN="#3676b7"
+	ALTYELLOW="#ffa88b"
+	ALTBLUE="#3a80c4"
+	ALTMAGENTA="#c790af"
+	ALTCYAN="#5286c9"
+	ALTWHITE="#fff5e9"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #B3101615
-  active = #43537a
-  inactive = #2e3954
+	background = #B30e0f16
+  active = #44516b
+  inactive = #2e384a
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -91,13 +91,13 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#101615B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#0e0f16B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#101615B3;
+		background:			#0e0f16B3;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		selected:			${BLUE};
@@ -110,8 +110,8 @@ bsprofi () {
 }
 
 bspdunst () {
-	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunstrc
-	cat >> "$HOME"/.config/bspwm/dunstrc <<- _EOF_
+	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunst/dunstrc
+	cat >> "$HOME"/.config/bspwm/dunst/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
     background = "${BACKGROUND}B3"
@@ -136,7 +136,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #101615B3;
+		--bg-color: #0e0f16B3;
 	}
 	EOF
 }

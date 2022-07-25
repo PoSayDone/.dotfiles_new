@@ -110,8 +110,8 @@ bsprofi () {{
 }}
 
 bspdunst () {{
-	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunstrc
-	cat >> "$HOME"/.config/bspwm/dunstrc <<- _EOF_
+	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunst/dunstrc
+	cat >> "$HOME"/.config/bspwm/dunst/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
     background = "${{BACKGROUND}}B3"
