@@ -1,3 +1,4 @@
-st.borderpx: 0
+st.borderpx: 20
+st.alpha: 1.0
 
 #include "/home/posaydone/.cache/wal/colors.Xresources"

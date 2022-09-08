@@ -1,4 +1,9 @@
 return {
+  --unit tests
+  ["vim-test/vim-test"] = {
+
+  },
+
   ["natecraddock/workspaces.nvim"] = {
     config = function()
       require("workspaces").setup{
@@ -16,24 +21,73 @@ return {
       require("persistence").setup()
     end,
   },
+  -- autoclose tags in html, jsx etc
+  ["windwp/nvim-ts-autotag"] = {
+    ft = { "html", "javascriptreact" },
+    after = "nvim-treesitter",
+    config = function()
+      require("custom.plugins.smolconfigs").autotag()
+    end,
+  },
 
-   ["Pocco81/AutoSave.nvim"] = {
-   config = function()
-      local autosave = require "autosave"
-      autosave.setup {
-         enabled = true,
-         execution_message = "autosaved at : " .. vim.fn.strftime "%H:%M:%S",
-         events = { "InsertLeave", "TextChanged" },
-         conditions = {
-            exists = true,
-            filetype_is_not = {"css", "html", "php"},
-            modifiable = true,
-         },
-         clean_command_line_interval = 2500,
-         on_off_commands = true,
-         write_all_buffers = false,
-      }
-   end,
+  -- format & linting
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require "custom.plugins.null-ls"
+    end,
+  },
+
+  -- minimal modes
+  ["Pocco81/true-zen.nvim"] = {
+    cmd = {
+      "TZAtaraxis",
+      "TZMinimalist",
+      "TZFocus",
+    },
+    config = function()
+      require "custom.plugins.truezen"
+    end,
+  },
+
+  -- get highlight group under cursor
+  ["nvim-treesitter/playground"] = {
+    cmd = "TSCaptureUnderCursor",
+    config = function()
+      require("nvim-treesitter.configs").setup()
+    end,
+  },
+
+  -- dim inactive windows
+  ["andreadev-it/shade.nvim"] = {
+    module = "shade",
+    config = function()
+      require("custom.plugins.smolconfigs").shade()
+    end,
+  },
+
+  ["Pocco81/auto-save.nvim"] = {
+    module = "autosave",
+    config = function()
+      require("custom.plugins.smolconfigs").autosave()
+    end,
+  },
+
+  -- notes stuff
+  ["nvim-neorg/neorg"] = {
+    ft = "norg",
+    after = "nvim-treesitter",
+    config = function()
+      require "custom.plugins.neorg"
+    end,
+  },
+
+  ["folke/which-key.nvim"] = {
+    disable = false,
+    module = "which-key",
+    config = function()
+      require "plugins.configs.whichkey"
+    end,
   },
 
   ["goolord/alpha-nvim"] = {
@@ -43,61 +97,20 @@ return {
     end,
   },
 
-   ["williamboman/nvim-lsp-installer"] = {
-
-   },
-
-   ["nvim-treesitter/playground"] = {
-
-   },
-
-   ["p00f/nvim-ts-rainbow"] = {
-
-   },
-
-   ["windwp/nvim-ts-autotag"] = {
-      ft = { "html", "javascriptreact" },
-      after = "nvim-treesitter",
-      config = function()
-         require("nvim-ts-autotag").setup()
-      end,
-   },
-
-   ["jose-elias-alvarez/null-ls.nvim"] = {
-      after = "nvim-lspconfig",
-      config = function()
-         require("custom.plugins.null-ls").setup()
-      end,
-   },
-
-   ["nvim-telescope/telescope-media-files.nvim"] = {
-      after = "telescope.nvim",
-      config = function()
-         require("telescope").setup {
-            extensions = {
-               media_files = {
-                  filetypes = { "png", "webp", "jpg", "jpeg" },
-               },
-
-               workspaces = {
-                 keep_insert = true,
-               },
-               -- fd is needed
-            },
-         }
-         require("telescope").load_extension "media_files"
-         require("telescope").load_extension "workspaces"
-      end,
-   },
-
-   ["Pocco81/TrueZen.nvim"] = {
-      cmd = {
-         "TZAtaraxis",
-         "TZMinimalist",
-         "TZFocus",
-      },
-      config = function()
-         require "custom.plugins.truezen"
-      end,
-   },
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+      require'lspconfig'.omnisharp.setup {
+          cmd = { "dotnet", "/home/posaydone/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
+          enable_editorconfig_support = true,
+          enable_ms_build_load_projects_on_demand = false,
+          enable_roslyn_analyzers = false,
+          organize_imports_on_format = false,
+          enable_import_completion = false,
+          sdk_include_prereleases = true,
+          analyze_open_documents_only = false,
+      }
+    end,
+  },
 }

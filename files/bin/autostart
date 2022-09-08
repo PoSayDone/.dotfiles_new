@@ -1,6 +1,5 @@
 #!/bin/sh
 DIR="$HOME/.config/bspwm/polybar"
-$HOME/.config/wpg/wp_init.sh &
 
 if [[ ! `pidof polybar` ]];
 then
