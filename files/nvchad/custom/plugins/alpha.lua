@@ -27,7 +27,7 @@ local header = {
     val = ascii,
     opts = {
         position = "center",
-        hl = "Typedef",
+        hl = "systemAccent",
    },
 }
 
@@ -36,7 +36,7 @@ local footer = {
     val = "Gigachad is real",
     opts = {
         position = "center",
-        hl = "Typedef",
+        hl = "systemAccent",
     },
 }
 
@@ -50,8 +50,8 @@ local function button(sc, txt, keybind)
         cursor = 5,
         width = 36,
         align_shortcut = "right",
-        hl = "Typedef",
-        hl_shortcut = "Number"
+        hl = "systemAccent",
+        hl_shortcut = "systemAccent"
     }
 
     if keybind then

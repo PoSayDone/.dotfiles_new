@@ -2,6 +2,7 @@ local M = {}
 local override = require "custom.override"
 local userHighlights = require "custom.highlights"
 local userPlugins = require "custom.plugins"
+local userHighlightsAdd = require "custom.highlightsadd"
 
 M.plugins = {
 
@@ -32,6 +33,7 @@ M.ui = {
   theme = "onedark",
   transparency = true,
   hl_override = userHighlights,
+  hl_add = userHighlightsAdd,
   theme_toggle = { "onedark", "one_light" },
 }
 
