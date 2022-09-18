@@ -21,6 +21,8 @@ cmd mkfile ${{
   $EDITOR $ans
 }}
 
+cmd dragon %dragon-drop -a $fx
+
 cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
 
 # Archive bindings
@@ -85,6 +87,7 @@ map <enter> open
 map R reload
 map mf mkfile
 map md mkdir
+map mv dragon
 map bg setwallpaper
 map C clear
 

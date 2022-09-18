@@ -28,8 +28,6 @@ case $chosen in
 			systemctl poweroff
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/bspwm/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $reboot)
@@ -38,8 +36,6 @@ case $chosen in
 			systemctl reboot
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/bspwm/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $lock)
@@ -53,8 +49,6 @@ case $chosen in
 			betterlockscreen --suspend
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/bspwm/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $logout)
@@ -63,8 +57,6 @@ case $chosen in
 			bspc quit
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/bspwm/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
 esac

@@ -1,10 +1,47 @@
 return {
   --unit tests
-  ["vim-test/vim-test"] = {
+    ["vim-test/vim-test"] = {
+    },
 
-  },
+    ["lyokha/vim-xkbswitch"] = {
+    },
 
-  ["natecraddock/workspaces.nvim"] = {
+    ["weilbith/nvim-code-action-menu"] = {
+    },
+
+    ["kosayoda/nvim-lightbulb"] = {
+    config = function()
+        require('nvim-lightbulb').setup({
+            ignore = {},
+            sign = {
+                enabled = true,
+                priority = 10,
+            },
+            float = {
+                enabled = false,
+                text = "ﯦ ",
+                win_opts = {},
+            },
+            virtual_text = {
+                enabled = false,
+                text = "ﯦ ",
+                hl_mode = "replace",
+            },
+            status_text = {
+                enabled = false,
+                text = "ﯦ ",
+                text_unavailable = ""
+            },
+            autocmd = {
+                enabled = false,
+                pattern = {"*"},
+                events = {"CursorHold", "CursorHoldI"}
+            }
+        })
+    end,
+    },
+
+    ["natecraddock/workspaces.nvim"] = {
     config = function()
       require("workspaces").setup{
         hooks = {
@@ -12,34 +49,34 @@ return {
         },
       }
     end,
-  },
+    },
 
-  ["folke/persistence.nvim"] = {
+    ["folke/persistence.nvim"] = {
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
     module = "persistence",
     config = function()
       require("persistence").setup()
     end,
-  },
-  -- autoclose tags in html, jsx etc
-  ["windwp/nvim-ts-autotag"] = {
+    },
+    -- autoclose tags in html, jsx etc
+    ["windwp/nvim-ts-autotag"] = {
     ft = { "html", "javascriptreact" },
     after = "nvim-treesitter",
     config = function()
       require("custom.plugins.smolconfigs").autotag()
     end,
-  },
+    },
 
-  -- format & linting
-  ["jose-elias-alvarez/null-ls.nvim"] = {
+    -- format & linting
+    ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
       require "custom.plugins.null-ls"
     end,
-  },
+    },
 
-  -- minimal modes
-  ["Pocco81/true-zen.nvim"] = {
+    -- minimal modes
+    ["Pocco81/true-zen.nvim"] = {
     cmd = {
       "TZAtaraxis",
       "TZMinimalist",
@@ -48,56 +85,56 @@ return {
     config = function()
       require "custom.plugins.truezen"
     end,
-  },
+    },
 
-  -- get highlight group under cursor
-  ["nvim-treesitter/playground"] = {
+    -- get highlight group under cursor
+    ["nvim-treesitter/playground"] = {
     cmd = "TSCaptureUnderCursor",
     config = function()
       require("nvim-treesitter.configs").setup()
     end,
-  },
+    },
 
-  -- dim inactive windows
-  ["andreadev-it/shade.nvim"] = {
+    -- dim inactive windows
+    ["andreadev-it/shade.nvim"] = {
     module = "shade",
     config = function()
       require("custom.plugins.smolconfigs").shade()
     end,
-  },
+    },
 
-  ["Pocco81/auto-save.nvim"] = {
+    ["Pocco81/auto-save.nvim"] = {
     module = "autosave",
     config = function()
       require("custom.plugins.smolconfigs").autosave()
     end,
-  },
+    },
 
-  -- notes stuff
-  ["nvim-neorg/neorg"] = {
+    -- notes stuff
+    ["nvim-neorg/neorg"] = {
     ft = "norg",
     after = "nvim-treesitter",
     config = function()
       require "custom.plugins.neorg"
     end,
-  },
+    },
 
-  ["folke/which-key.nvim"] = {
+    ["folke/which-key.nvim"] = {
     disable = false,
     module = "which-key",
     config = function()
       require "plugins.configs.whichkey"
     end,
-  },
+    },
 
-  ["goolord/alpha-nvim"] = {
+    ["goolord/alpha-nvim"] = {
     disable = false,
     config = function()
        require("custom.plugins.alpha")
     end,
-  },
+    },
 
-  ["neovim/nvim-lspconfig"] = {
+    ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
@@ -112,5 +149,5 @@ return {
           analyze_open_documents_only = false,
       }
     end,
-  },
-}
+    },
+    }

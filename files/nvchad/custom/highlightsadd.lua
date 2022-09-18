@@ -1,3 +1,3 @@
 return   {
-  systemAccent = { fg = "#2F6698" }
+  systemAccent = { fg = "#9FB39B" }
 }

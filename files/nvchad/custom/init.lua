@@ -30,6 +30,13 @@ autocmd("FileType", {
   end,
 })
 
+vim.opt.shiftwidth = 4
+opt_local.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+vim.g.XkbSwitchEnabled = 1
+vim.g.XkbSwitchMappings = 'ru'
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()]]
+vim.opt.numberwidth=5
+
 -- Dynamic terminal padding with/without nvim (for siduck's st only)
 -- replace stuff from file
 local function sed(from, to, fname)
@@ -63,6 +70,9 @@ autocmd("VimEnter", {
   callback = function()
     sed("st.borderpx: 20", "st.borderpx: 0", "~/.Xresources")
     liveReload_xresources()
+
+    sed("st.borderpx: 0", "st.borderpx: 20", "~/.Xresources")
+    vim.cmd(string.format "silent !xrdb -merge ~/.Xresources")
   end,
 })
 -- add terminal padding
