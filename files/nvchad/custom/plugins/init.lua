@@ -1,5 +1,47 @@
+local overrides = require "custom.plugins.overrides"
+
 return {
-  --unit tests
+----------------------------------------- default plugins ------------------------------------------
+    ["NvChad/ui"] = {
+        override_options = overrides.ui
+    },
+    ["folke/which-key.nvim"] = {
+        disable = false,
+    },
+
+    ["goolord/alpha-nvim"] = {
+        disable = false,
+        config = function()
+            require("custom.plugins.alpha")
+        end
+    },
+
+    ["neovim/nvim-lspconfig"] = {
+        config = function()
+            require "plugins.configs.lspconfig"
+            require "custom.plugins.lspconfig"
+        end
+    },
+
+    -- override default configs
+    ["kyazdani42/nvim-tree.lua"] = {
+        override_options = overrides.nvimtree
+    },
+
+    ["nvim-treesitter/nvim-treesitter"] = {
+        override_options = overrides.treesitter
+    },
+
+    ["lukas-reineke/indent-blankline.nvim"] = {
+        override_options = overrides.blankline
+    },
+
+    ["williamboman/mason.nvim"] = {
+        override_options = overrides.mason
+    },
+
+    --------------------------------------------- custom plugins ----------------------------------------------
+
     ["vim-test/vim-test"] = {
     },
 
@@ -9,38 +51,7 @@ return {
     ["weilbith/nvim-code-action-menu"] = {
     },
 
-    ["kosayoda/nvim-lightbulb"] = {
-    config = function()
-        require('nvim-lightbulb').setup({
-            ignore = {},
-            sign = {
-                enabled = true,
-                priority = 10,
-            },
-            float = {
-                enabled = false,
-                text = "ﯦ ",
-                win_opts = {},
-            },
-            virtual_text = {
-                enabled = false,
-                text = "ﯦ ",
-                hl_mode = "replace",
-            },
-            status_text = {
-                enabled = false,
-                text = "ﯦ ",
-                text_unavailable = ""
-            },
-            autocmd = {
-                enabled = false,
-                pattern = {"*"},
-                events = {"CursorHold", "CursorHoldI"}
-            }
-        })
-    end,
-    },
-
+    --workspaces plugin
     ["natecraddock/workspaces.nvim"] = {
     config = function()
       require("workspaces").setup{
@@ -51,103 +62,82 @@ return {
     end,
     },
 
-    ["folke/persistence.nvim"] = {
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    module = "persistence",
-    config = function()
-      require("persistence").setup()
-    end,
-    },
-    -- autoclose tags in html, jsx etc
+    -- autoclose tags in html, jsx only
     ["windwp/nvim-ts-autotag"] = {
-    ft = { "html", "javascriptreact" },
-    after = "nvim-treesitter",
-    config = function()
-      require("custom.plugins.smolconfigs").autotag()
-    end,
+        ft = {"html", "javascriptreact"},
+        after = "nvim-treesitter",
+        config = function()
+            local present, autotag = pcall(require, "nvim-ts-autotag")
+
+            if present then
+                autotag.setup()
+            end
+        end
     },
 
     -- format & linting
     ["jose-elias-alvarez/null-ls.nvim"] = {
-    after = "nvim-lspconfig",
-    config = function()
-      require "custom.plugins.null-ls"
-    end,
+        after = "nvim-lspconfig",
+        config = function()
+            require "custom.plugins.null-ls"
+        end
     },
 
-    -- minimal modes
-    ["Pocco81/true-zen.nvim"] = {
-    cmd = {
-      "TZAtaraxis",
-      "TZMinimalist",
-      "TZFocus",
-    },
-    config = function()
-      require "custom.plugins.truezen"
-    end,
+    -- distraction free modes
+    ["Pocco81/TrueZen.nvim"] = {
+        cmd = {
+            "TZAtaraxis",
+            "TZMinimalist",
+            "TZFocus"
+        },
+        config = function()
+            require "custom.plugins.truezen"
+        end
     },
 
     -- get highlight group under cursor
     ["nvim-treesitter/playground"] = {
-    cmd = "TSCaptureUnderCursor",
-    config = function()
-      require("nvim-treesitter.configs").setup()
-    end,
+        cmd = "TSCaptureUnderCursor",
+        config = function()
+            require("nvim-treesitter.configs").setup()
+        end
     },
+
+    -- I rarely use shade.nvim/autosave.nvim so made commands to enable them
 
     -- dim inactive windows
     ["andreadev-it/shade.nvim"] = {
-    module = "shade",
-    config = function()
-      require("custom.plugins.smolconfigs").shade()
-    end,
+        module = "shade",
+        config = function()
+            require "custom.plugins.shade"
+        end
     },
 
+    -- autosave
     ["Pocco81/auto-save.nvim"] = {
-    module = "autosave",
-    config = function()
-      require("custom.plugins.smolconfigs").autosave()
-    end,
+        config = function()
+            require("auto-save").setup()
+        end
     },
 
-    -- notes stuff
+    -- notes & todo stuff
     ["nvim-neorg/neorg"] = {
-    ft = "norg",
-    after = "nvim-treesitter",
-    config = function()
-      require "custom.plugins.neorg"
-    end,
+        tag = "0.0.12",
+        ft = "norg",
+        after = "nvim-treesitter",
+        setup = function()
+            require("custom.plugins.neorg").autocmd()
+        end,
+        config = function()
+            require("custom.plugins.neorg").setup()
+        end
     },
 
-    ["folke/which-key.nvim"] = {
-    disable = false,
-    module = "which-key",
-    config = function()
-      require "plugins.configs.whichkey"
-    end,
-    },
-
-    ["goolord/alpha-nvim"] = {
-    disable = false,
-    config = function()
-       require("custom.plugins.alpha")
-    end,
-    },
-
-    ["neovim/nvim-lspconfig"] = {
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
-      require'lspconfig'.omnisharp.setup {
-          cmd = { "dotnet", "/home/posaydone/.local/share/nvim/mason/packages/omnisharp/OmniSharp.dll" },
-          enable_editorconfig_support = true,
-          enable_ms_build_load_projects_on_demand = false,
-          enable_roslyn_analyzers = false,
-          organize_imports_on_format = false,
-          enable_import_completion = false,
-          sdk_include_prereleases = true,
-          analyze_open_documents_only = false,
-      }
-    end,
-    },
+    -- basic diagrams for flow charts etc
+    ["jbyuki/venn.nvim"] = {
+        module = "venn.nvim",
+        config = function()
+            require("custom.plugins.venn").setup()
+        end
     }
+}

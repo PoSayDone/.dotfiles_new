@@ -19,6 +19,7 @@ ln -sf $HOME/.config/bspwm/lf $HOME/.config/
 ln -sf $HOME/.config/bspwm/ranger $HOME/.config/
 ln -sf $HOME/.config/bspwm/qt5ct $HOME/.config/
 ln -sf $HOME/.config/bspwm/gtk-3.0 $HOME/.config/
+ln -sf $HOME/.config/bspwm/betterlockscreenrc $HOME/.config/
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
 fc-cache -r

@@ -34,7 +34,6 @@ vim.opt.shiftwidth = 4
 opt_local.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 vim.g.XkbSwitchEnabled = 1
 vim.g.XkbSwitchMappings = 'ru'
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()]]
 vim.opt.numberwidth=5
 
 -- Dynamic terminal padding with/without nvim (for siduck's st only)

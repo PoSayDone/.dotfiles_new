@@ -160,7 +160,7 @@ bspstartpage () {{
 }}
 
 bspnvim () {{
-  sed -i "s/systemAccent.*/systemAccent = {{ fg = \"${{YELLOW}}\" }}/" "$HOME/.config/bspwm/nvchad/custom/highlightsadd.lua"
+  sed -i "s/systemAccent.*/systemAccent = {{ fg = \"${{YELLOW}}\" }}\,/" "$HOME/.config/bspwm/nvchad/custom/highlights.lua"
 }}
 
 main () {{

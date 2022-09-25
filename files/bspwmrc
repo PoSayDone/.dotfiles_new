@@ -70,7 +70,7 @@ for i in ${code[@]}; do
 
 # 5 > office and docs
 declare -a office=(Gucharmap Atril Evince \
-libreoffice-writer libreoffice-calc libreoffice-impress \ libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
+libreoffice-writer libreoffice-calc libreoffice-impress \ libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice Wine:winword.exe)
 for i in ${office[@]}; do
    bspc rule -a $i desktop='^5' follow=on focus=on; done
 
@@ -106,6 +106,8 @@ bspc rule -a ranger follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a nvim follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
+bspc rule -a Wine:winword.exe border=off
+
 
 ## Autostart -------------------------------------------------#
 
