@@ -2,7 +2,7 @@ local M = {}
 
 M.new_hlgroups = {
     -- pywal
-    systemAccent = { fg = "#2F6698" },
+    systemAccent = { fg = "#BE906D" },
 
     -- Neorg
     NeorgCodeBlock = { bg = "black2" },

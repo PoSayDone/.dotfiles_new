@@ -100,3 +100,4 @@ map gD cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
 map gs cd ~/.local/share
+map gi cd '~/Documents/C#/GitRepos/'

@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#fffaf1"
-	BACKGROUND="#10151a"
+	FOREGROUND="#cefbff"
+	BACKGROUND="#10171e"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#10151a"
-	RED="#6C7987"
-	GREEN="#3378A3"
-	YELLOW="#2F6698"
-	BLUE="#2C5B8F"
-	MAGENTA="#B1A9AE"
-	CYAN="#4084AB"
-	WHITE="#e2d3cb"
-	ALTBLACK="#222d39"
-	ALTRED="#7c9cbf"
-	ALTGREEN="#349fe1"
-	ALTYELLOW="#3085d2"
-	ALTBLUE="#2c75c6"
-	ALTMAGENTA="#fcc5e7"
-	ALTCYAN="#43afed"
-	ALTWHITE="#fffaf1"
+	BLACK="#10171e"
+	RED="#276F9A"
+	GREEN="#2C6A92"
+	YELLOW="#BE906D"
+	BLUE="#155A85"
+	MAGENTA="#4E6E88"
+	CYAN="#568DAE"
+	WHITE="#9bbdd0"
+	ALTBLACK="#212f3e"
+	ALTRED="#2693d4"
+	ALTGREEN="#2c8cca"
+	ALTYELLOW="#ffb87a"
+	ALTBLUE="#1177b7"
+	ALTMAGENTA="#5790be"
+	ALTCYAN="#5ebbf3"
+	ALTWHITE="#cefbff"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #B310151a
-  active = #56606b
-  inactive = #3b424a
+	background = #B310171e
+  active = #1f587b
+  inactive = #153c54
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -53,6 +53,39 @@ bspbar () {
 	altmagenta = ${ALTMAGENTA}
 	altcyan = ${ALTCYAN}
 	altwhite = ${ALTWHITE}
+	EOF
+}
+
+bspeww () {
+	cat > $DIR/eww/_colors.scss <<- EOF
+  \$bg: rgba(\$color: ${BACKGROUND}, \$alpha: 0.3);;
+  \$contrastbg: ${BACKGROUND};
+  \$bgSecondary: ${BACKGROUND};
+  \$bgSecondaryAlt: #b6beca;
+  \$fg: #b6beca;
+  \$fgDim: #b6beca;
+  \$watermelon: #e05f65;
+
+  // Aliases
+  \$background: \$bg;
+  \$backgroundSecondary: \$bgSecondary;
+  \$backgroundSecondaryAlt: \$bgSecondaryAlt;
+  \$foreground: \$fg;
+  \$foregroundDim: \$fgDim;
+
+  \$black: #242931;
+  \$red: #e05f65;
+  \$blue: #70a5eb;
+  \$cyan: #74bee9;
+  \$blue-desaturated: #74bee9;
+  \$magenta: #c68aee;
+  \$purple: #c68aee;
+  \$green: ${RED};
+  \$aquamarine: #94f7c5;
+  \$yellow: #f1cf8a;
+  \$accent: \$green;
+  \$javacafeMagenta: #c68aee;
+  \$javacafeBlue: #70a5eb;
 	EOF
 }
 
@@ -91,13 +124,13 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#10151aB3",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#10171eB3",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#10151aB3;
+		background:			#10171eB3;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		selected:			${BLUE};
@@ -136,7 +169,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #10151aB3;
+		--bg-color: #10171eB3;
 	}
 	EOF
 }
@@ -165,6 +198,7 @@ bspnvim () {
 
 main () {
 	getcolors
+  bspeww
 	bspbar
 	bspterm
 	bsprofi

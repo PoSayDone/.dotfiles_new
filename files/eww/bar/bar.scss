@@ -1,0 +1,189 @@
+.bar {
+  border-radius: 12px;
+  background-color: $bg;
+  font-family: SF Pro Display;
+  font-size: 12px;
+  color: $fg;
+}
+
+.launcher {
+  margin: 7px 0 7px 7px;
+  font-size: 16px;
+  .dispatcher {
+    background-color: $green;
+    color: $bg;
+    border-radius: 7px;
+    font-size: inherit;
+    padding: 0 14px 0 10px;
+  }
+}
+
+.works {
+  margin-top: 7px;
+  margin-left: 13px;
+  font-size: 15px;
+
+  .0 {
+    padding: 7px 11px;
+  }
+
+  .01, .02, .03, .04, .05, .06, .07, .08, .09 {
+    color: $fg;
+    padding: 7px 11px;
+  }
+  
+  .011, .022, .033, .044, .055, .066, .077, .088, .099 {
+    color: $green;
+    padding: 7px 11px;
+  }
+}
+
+.wintitle {
+  background-color: $bg;
+  color: $green;
+  margin: 7px 0;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.date-box {
+    font-weight: bold;
+  background: $bg;
+  margin: 7px 7px 7px 0;
+  padding: 0 8px 0 12px;
+  border-radius: 7px;
+  .content {
+    color: $fg;
+    font-size: 14px;
+    padding-right: 3px;
+  }
+  .date-dropdown {
+    margin: 0;
+    padding: 0 5px 0 0px;
+    color: $fg;
+  }
+}
+
+.sep {
+  color: rgba($color: #000000, $alpha: 0.0);
+  padding: 0;
+}
+
+// calendar
+.cal-box {
+  font-family: SF Pro Display;
+  background-color: $bg;
+  border-radius: 8px;
+  padding: 1rem 1rem .2rem;
+
+  .cal {
+    padding: .8rem .25rem 0rem;
+    margin-left: 10px;
+    
+    &.highlight {
+      padding: 10rem;
+    }
+  }
+}
+
+calendar:selected {
+  color: $accent;
+}
+
+calendar.header {
+  color: $cyan;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $cyan;
+}
+
+calendar.highlight {
+    background: none;
+  color: $green;
+  font-weight: bold;
+}
+
+
+// controls dispatcher
+.controls-dispatcher-box {
+  margin: 5px 0 5px 13px;
+  .dispatcher-btn {
+    background-color: $contrastbg;
+    &:hover { background-color: $bgSecondary; }
+    &:active { background-color: $contrastbg; }
+    padding: 0px 16px 0px 13px;
+    border-radius: 7px;
+    color: $blue;
+  }
+}
+
+.actionsbox {
+  background: $bg;
+  border-radius: 7px;
+  padding: 0 12px;
+  font-family: Iosevka Nerd Font;
+  margin: 7px 10px 7px 15px;
+}
+
+// actions revealer
+.actions-revealer {
+  margin: 7px 7px 7px 0;
+  font-size: 14px;
+  .dispatcher {
+    background-color: $bg;
+    &:hover, &.active { background-color: $contrastbg; }
+    &:active { background-color: $bgSecondary; }
+    padding: 0px 13px 0px 12px;
+    border-radius: 7px;
+  }
+  .opened-actions {
+    margin-right: 8px;
+    .network {
+      background-color: $bg;
+      &:hover { background-color: $contrastbg; }
+      &:active { background-color: $bgSecondary; }
+    padding: 1px 15px 0px 10px;
+      border-radius: 7px;
+      &.disconnected { color: $red; border-bottom-color: $red; }
+      &.connected { color: $green; border-bottom-color: $green; }
+    }
+    .volume {
+      background-color: $bg;
+      &:hover { background-color: $contrastbg; }
+      &:active { background-color: $bgSecondary; }
+      margin-left: 5px;
+    padding: 1px 14px 0px 11px;
+      border-radius: 7px;
+      &.red { color: $red; border-bottom-color: $red; }
+      &.magenta { color: $magenta; border-bottom-color: $magenta; }
+      &.yellow { color: $yellow; border-bottom-color: $yellow; }
+      &.blue { color: $blue; border-bottom-color: $blue; }
+    }
+  }
+}
+
+.powermenu-box {
+  padding: 0 0px;
+  margin: 7px 7px 7px 0px;
+  background: inherit;
+  .dispatcher {
+    border-radius: 7px;
+    background: $bg;
+    color: $red;
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    &:hover { background-color: $contrastbg; }
+    &:active { background-color: $bgSecondary; }
+  }
+}
+
+// powermenu
+.powermenu-container {
+  background: $bg;
+  color: $fg;
+  padding: 10px;
+  font-size: 55px;
+}

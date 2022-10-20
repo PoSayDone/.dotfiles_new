@@ -1,0 +1,160 @@
+(include "./bar/widgets/_calendar.yuck")
+(include "./bar/widgets/_powermenu.yuck")
+
+(defwidget launcher[]
+  (box :orientation "h"
+       :class "launcher"
+       :tooltip "Launch apps"
+    (button :class "dispatcher" :onclick "sh ~/.config/bspwm/rofi/bin/launcher" "")
+  )
+)
+
+(defwidget workspaces []
+  (literal :content workspace)
+)
+(deflisten workspace "scripts/getWorkspaces")
+
+(defwidget actions-revealer []
+  (box :class "actions-revealer"
+       :orientation "h"
+       :space-evenly "false"
+    (revealer :transition "slideleft"
+              :duration "0.5s"
+              :reveal actions_are_opened
+      (box :class "opened-actions"
+           :orientation "h"
+           :space-evenly "false"
+        (button :class "network ${network_class}"
+                :tooltip "${network_name} (Press to open nmtui)"
+                :onclick "scripts/exec st -c network -e lessborder nmtui"
+                network_icon)
+        (button :class "volume ${volume_class}"
+                :tooltip "Volume: ${volume} (Press to open pavucontrol)"
+                :onclick "scripts/exec pavucontrol"
+                volume_icon)
+      )
+    )
+    (button :class "dispatcher ${actions_are_opened ? 'active' : ''}"
+            :onclick "eww update actions_are_opened=${!actions_are_opened}"
+            {actions_are_opened ? "" : ""})
+  )
+)
+(defvar actions_are_opened false)
+
+(defwidget controls-dispatcher []
+  (box :class "controls-dispatcher-box"
+       :orientation "h"
+       :space-evenly "false"
+    (button :class "dispatcher-btn"
+            :tooltip "Open controls"
+            :onclick "controls/toggle.sh"
+            "漣")
+  )
+)
+
+(defwidget left []
+  (box :orientation "h"
+       :space-evenly "false"
+       :halign "start"
+       :class "left"
+    (launcher)
+    (workspaces)
+    (controls-dispatcher)
+  )
+)
+
+(defwidget wintitle []
+  (label :text xtitle :class "wintitle")
+)
+(defpoll xtitle :interval "1s" "scripts/getWinTitle")
+
+(defwidget center []
+  (box :class "center-widgets"
+       :space-evenly "false"
+       :halign "center"
+       :orientation "h"
+    (wintitle)
+  )
+)
+
+(defwidget sep []
+  (label :class "sep" :text "")
+)
+
+(defwidget dropdown [onclick ?class ?tooltip]
+  (button :tooltip tooltip :class class :onclick onclick "")
+)
+
+(defwidget datebox []
+  (box :orientation "h"
+       :class "date-box"
+       :space-evenly "false"
+    (label :text dateval :class "content")
+    (sep)
+    (dropdown
+      :onclick "eww open --toggle calendar"
+      :class "date-dropdown"
+      :tooltip "Toggle calendar")
+  )
+)
+(defpoll dateval :interval "1s" "scripts/getDate")
+
+(defwidget powermenu []
+  (box :orientation "h"
+       :space-evenly "false"
+       :class "powermenu-box"
+    (button :class "dispatcher"
+            :tooltip "Toggle Power Menu"
+            :onclick "sh ~/.config/bspwm/rofi/bin/powermenu"
+            "⏻")
+  )
+)
+
+(defwidget actionsbox []
+  (button :class "actionsbox" :onclick "eww -c ~/.config/eww open --toggle actions"
+    (box :orientation "h"
+        :space-evenly false
+        :spacing 13
+      ; margin are used to fix issues with nerd fonts widths :/
+      (label :text "${network_icon}" :style "margin-right: ${network_status == 'Connected' ? '3px' : '0px'};")
+      (label :text "${network_radio == 'on' ? '' : ''}")
+      (label :text "${volume_icon}" :style "margin-right: 3px;")
+      (label :text "${bluetooth_state == 'on' ? '' : ''}")
+      (label :text "${mic_status == 'yes' ? '' : ''}" :style "margin-left: -2px;")
+    )
+  )
+)
+
+(defwidget right []
+  (box :class "right-modules"
+       :space-evenly "false"
+       :halign "end"
+       :orientation "h"
+    (actionsbox)
+    (datebox)
+    (powermenu)
+  )
+)
+
+(defwidget bar []
+  (box :class "bar"
+       :orientation "h"
+    (left)
+    (center)
+    (right)
+  )
+)
+
+(defwindow bar
+   :geometry (geometry :x "0px"
+                       :y "10px"
+                       :width "72%"
+                       :height "46px"
+                       :anchor "top center")
+   :focusable true
+   :stacking "bg"
+   :reserve (struts :distance "52px" :side "top")
+   :windowtype "notification"
+   :wm-ignore false
+   :exclusive true
+ (bar))

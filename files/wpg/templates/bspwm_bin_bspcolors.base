@@ -56,6 +56,39 @@ bspbar () {{
 	EOF
 }}
 
+bspeww () {{
+	cat > $DIR/eww/_colors.scss <<- EOF
+  \$bg: rgba(\$color: ${{BACKGROUND}}, \$alpha: 0.3);;
+  \$contrastbg: ${{BACKGROUND}};
+  \$bgSecondary: ${{BACKGROUND}};
+  \$bgSecondaryAlt: #b6beca;
+  \$fg: #b6beca;
+  \$fgDim: #b6beca;
+  \$watermelon: #e05f65;
+
+  // Aliases
+  \$background: \$bg;
+  \$backgroundSecondary: \$bgSecondary;
+  \$backgroundSecondaryAlt: \$bgSecondaryAlt;
+  \$foreground: \$fg;
+  \$foregroundDim: \$fgDim;
+
+  \$black: #242931;
+  \$red: #e05f65;
+  \$blue: #70a5eb;
+  \$cyan: #74bee9;
+  \$blue-desaturated: #74bee9;
+  \$magenta: #c68aee;
+  \$purple: #c68aee;
+  \$green: ${{RED}};
+  \$aquamarine: #94f7c5;
+  \$yellow: #f1cf8a;
+  \$accent: \$green;
+  \$javacafeMagenta: #c68aee;
+  \$javacafeBlue: #70a5eb;
+	EOF
+}}
+
 bspterm () {{
 	cat > "$DIR"/alacritty/colors.yml <<- _EOF_
 		## Colors configuration
@@ -165,6 +198,7 @@ bspnvim () {{
 
 main () {{
 	getcolors
+  bspeww
 	bspbar
 	bspterm
 	bsprofi

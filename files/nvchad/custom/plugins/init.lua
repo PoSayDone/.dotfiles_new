@@ -2,7 +2,7 @@ local overrides = require "custom.plugins.overrides"
 
 return {
 ----------------------------------------- default plugins ------------------------------------------
-    ["NvChad/ui"] = {
+   ["NvChad/ui"] = {
         override_options = overrides.ui
     },
     ["folke/which-key.nvim"] = {
@@ -40,16 +40,27 @@ return {
         override_options = overrides.mason
     },
 
+   ["hrsh7th/nvim-cmp"] = {
+    override_options = function()
+      local cmp = require "cmp"
+
+      return {
+        mapping = {
+          ["<Tab>"] = cmp.config.disable,
+          ["<S-Tab>"] = cmp.config.disable,
+        },
+      }
+    end,
+  },
     --------------------------------------------- custom plugins ----------------------------------------------
 
-    ["vim-test/vim-test"] = {
-    },
+    ["lervag/vimtex"] = { },
 
-    ["lyokha/vim-xkbswitch"] = {
-    },
+    ["vim-test/vim-test"] = { },
 
-    ["weilbith/nvim-code-action-menu"] = {
-    },
+    ["lyokha/vim-xkbswitch"] = { },
+
+    ["weilbith/nvim-code-action-menu"] = { },
 
     --workspaces plugin
     ["natecraddock/workspaces.nvim"] = {

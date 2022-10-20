@@ -141,7 +141,7 @@ alt + {_,shift + }Tab
 	bspc node -f {next.local,prev.local}
 
 # Switch workspace
-ctrl + alt + {Left,Right}
+ctrl + alt + {k,j}
 	bspc desktop -f {prev.local,next.local}
 
 # Switch to last opened workspace

@@ -1,5 +1,13 @@
 local M = {}
 
+M.cmp = {
+    i = {
+        ["<Down>"]= { "<Cmd>lua require('cmp').select_next_item()<CR>", "cmp next item" },
+        ["<Up>"] = { "<Cmd>lua require('cmp').select_prev_item()<CR>", "cmp prev item" },
+        ["<S-Tab>"]= { "<Cmd>lua require('cmp').select_next_item()<CR>", "cmp next item" },
+    },
+}
+
 M.workspaces = {
    n = {
        ["<leader>wa"] = { "<cmd> WorkspacesAdd<CR>", "   add workspace folder" },

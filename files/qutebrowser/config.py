@@ -35,6 +35,8 @@ c.url.searchengines = {
     '!yt':      'https://www.youtube.com/results?search_query={}'
 }
 
+c.tabs.padding = {"bottom": 13, "left": 10, "right": 10, "top": 13}
+
 c.url.start_pages = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 c.url.default_page = 'file:///home/posaydone/.config/bspwm/startpage/index.html'
 c.fonts.default_family = 'SF Pro Display'
@@ -45,6 +47,16 @@ c.fonts.tabs.unselected = "400 default_size default_family"
 c.content.local_content_can_access_remote_urls = True
 c.scrolling.smooth = True
 c.qt.workarounds.remove_service_workers = True
+
+old_chrome_ua = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/67.0.1 Safari/{webkit_version}'
+
+config.set('content.headers.user_agent', old_chrome_ua, 'steamdb.info')
+config.set('content.headers.user_agent', old_chrome_ua, 'forum.xda-developers.com')
+config.set('content.headers.user_agent', old_chrome_ua, 'www.nginx.com')
+config.set('content.headers.user_agent', old_chrome_ua, 'gitlab.com/users/sign_in')
+config.set("input.mode_override", "passthrough", "docs.google.com")
+config.set("input.mode_override", "passthrough", "programforyou.ru")
+config.set("input.mode_override", "passthrough", "eduhseru-my.sharepoint.com")
 
 config.unbind('.')
 en_keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./"+'QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'

@@ -1,0 +1,52 @@
+(defpoll art :interval "2s" "scripts/echoSongArt")
+(defpoll song_art :interval "2s" "scripts/getSongArt")
+(defpoll song_title :interval "2s" "scripts/getSongTitle")
+(defpoll full_song_title :interval "2s" "scripts/getSongTitle full")
+
+(defpoll calendar_day :interval "10h" "date '+%d'")
+(defpoll calendar_month :interval "10h" "./scripts/getCalendarMonth")
+(defpoll calendar_year :interval "10h" "date '+%Y'")
+
+(defpoll network_icon :interval "3s" "./scripts/network.sh icon")
+(defpoll network_class :interval "3s" "./scripts/network.sh class")
+(defpoll network_name :interval "3s" "./scripts/network.sh name")
+
+(defpoll volume_class :interval "1s" "scripts/getVolume class")
+(defpoll volume :interval "1s" "scripts/getVolume percentage")
+(defpoll vol :interval "1s" "scripts/getVolume vol")
+(defpoll volume_icon :interval "1s" "scripts/getVolume icon")
+
+(defpoll br_icon :interval "1s" "scripts/getBrightness icon")
+(defpoll br :interval "1s" "scripts/getBrightness br")
+
+(defpoll ram_class :interval "5s" "scripts/getRam class")
+(defpoll ram :interval "5s" "scripts/getRam ram")
+
+(defpoll cpu :interval "5s" "scripts/getCpu cpu")
+
+(defpoll network_status :interval "1s" "~/.config/eww/scripts/network.sh status")
+(defpoll network_radio :interval "1s" "~/.config/eww/scripts/network.sh radio-status")
+(defpoll network_ssid :interval "1s" "~/.config/eww/scripts/network.sh ssid")
+
+(defpoll date :interval "1s" "date '+%d %b, %I:%M %p'")
+(defpoll completeday :interval "1h" "date '+%A, %d %B'")
+
+(defpoll volume_value :interval "1s" "~/.config/eww/scripts/volume.sh vol")
+(defpoll is_muted :interval "1s" "~/.config/eww/scripts/volume.sh muted")
+
+(defpoll lithour :interval "30m" "date +%H")
+(defpoll litmin :interval "30s" "date +%M")
+
+(defpoll music_pic :interval "2s" "~/.config/eww/scripts/music/songart.sh get")
+(defpoll music_url :interval "1s" "~/.config/eww/scripts/music/songart.sh echo")
+
+(defpoll music_title :interval "1s" "~/.config/eww/scripts/music/songdata.sh title")
+(defpoll music_artist :interval "1s" "~/.config/eww/scripts/music/songdata.sh artist")
+(defpoll music_status :interval "1s" "~/.config/eww/scripts/music/songdata.sh status")
+
+(defpoll pfp :interval "1s" "~/.config/eww/scripts/pfp.sh")
+(defpoll username :interval "1s" "~/.config/eww/scripts/user.sh")
+
+(defpoll bluetooth_state :interval "1s" "~/.config/eww/scripts/bluetooth state")
+(defpoll redshift_state :interval "1s" "~/.config/eww/scripts/redshift state")
+(defpoll mic_status :interval "1s" "~/.config/eww/scripts/mic status")

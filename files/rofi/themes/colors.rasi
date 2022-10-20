@@ -1,10 +1,10 @@
 * {
-background:			#10151aB3;
+background:			#10171eB3;
     background-alt: #00000000;
-foreground:			#fffaf1;
-selected:			#2C5B8F;
-highlight:			#2F6698;
-urgent:				#6C7987;
-on:					#3378A3;
-off:				#6C7987;
+foreground:			#cefbff;
+selected:			#155A85;
+highlight:			#BE906D;
+urgent:				#276F9A;
+on:					#2C6A92;
+off:				#276F9A;
 }

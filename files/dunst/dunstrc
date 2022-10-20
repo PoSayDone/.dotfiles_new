@@ -37,18 +37,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 2
-    background = "#10151aB3"
-    foreground = "#fffaf1"
-frame_color = "#2C5B8F"
+    background = "#10171eB3"
+    foreground = "#cefbff"
+frame_color = "#155A85"
 
 [urgency_normal]
 timeout = 5
-    background = "#10151aB3"
-    foreground = "#fffaf1"
-frame_color = "#2C5B8F"
+    background = "#10171eB3"
+    foreground = "#cefbff"
+frame_color = "#155A85"
 
 [urgency_critical]
 timeout = 0
-    background = "#10151aB3"
-    foreground = "#fffaf1"
-frame_color = "#6C7987"
+    background = "#10171eB3"
+    foreground = "#cefbff"
+frame_color = "#276F9A"

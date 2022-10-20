@@ -1,0 +1,111 @@
+(defwidget stats []
+  (box :class "stats-box"
+       :orientation "v"
+       :space-evenly "false"
+    (box :orientation "h"
+         :space-evenly "false"
+         :class "vol-slider"
+      (box :class "vol-label ${volume_class}"
+           volume_icon
+      )
+      (scale :value vol
+             :onchange "amixer sset Master {}%"
+             :min 0
+             :max 101)
+    )
+    (box :class "br-slider"
+         :orientation "h"
+         :space-evenly "false"
+      (box :class "br-label"
+           br_icon)
+      (scale :value br
+             :onchange "brightnessctl s {}%"
+             :min 0
+             :max 101)
+    )
+    (box :class "ram-slider"
+         :orientation "h"
+         :space-evenly "false"
+      (box :class "ram-label ${ram_class}"
+           "")
+      (scale :value ram
+             :active false
+             :min 0
+             :max 101)
+    )
+    (box :class "cpu-slider"
+         :orientation "h"
+         :space-evenly "false"
+      (box :class "cpu-label"
+           "")
+      (scale :value cpu
+             :active false
+             :min 0
+             :max 101)
+    )
+  )
+)
+
+(defwindow stats
+  :geometry (geometry :x "13px"
+                      :y "65px"
+                      :width "135px"
+                      :height "20%")
+(stats))
+
+(defwidget datepanel []
+  (box :class "datepanel-box"
+       :orientation "h"
+    (box :orientation "v"
+         :space-evenly "false"
+         :class "content"
+         :halign "center"
+         :valign "center"
+      (box :orientation "v"
+           :space-evenly "false"
+           :class "dateval-box"
+        (label :text dateval :class "value")
+      )
+      (box :orientation "v"
+           :space-evenly "false"
+           :class "weekday-box"
+        (label :text weekday :class "weekday")
+      )
+    )
+  )
+)
+(defpoll weekday :interval "10h" "date +%A")
+
+(defwindow date
+  :geometry (geometry :x "-13px"
+                      :y "65px"
+                      :width "250px"
+                      :height "125px"
+                      :anchor "top right")
+(datepanel))
+
+(defwidget search-box []
+  (box :class "search-box"
+       :orientation "v"
+    (box :class "button-container"
+         :orientation "v"
+         :space-evenly "false"
+      (button :class "search-button"
+              :onclick "scripts/exec rofi -show drun"
+              "  Search...")
+    )
+    (box :class "welcome-container"
+         :space-evenly "false"
+         :orientation "v"
+      (label :text "Welcome ${user}" :class "welcome")
+    )
+  )
+)
+(defpoll user :interval "100s" "whoami")
+
+(defwindow search
+  :geometry (geometry :x "13px"
+                      :y "31%"
+                      :width "220px"
+                      :height "20%")
+(search-box))

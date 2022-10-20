@@ -30,7 +30,9 @@ autocmd("FileType", {
   end,
 })
 
-vim.opt.shiftwidth = 4
+vim.wo.linebreak = false
+vim.wo.wrap = false
+vim.opt.shiftwidth = 2
 opt_local.langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 vim.g.XkbSwitchEnabled = 1
 vim.g.XkbSwitchMappings = 'ru'

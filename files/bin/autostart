@@ -1,11 +1,9 @@
 #!/bin/sh
 DIR="$HOME/.config/bspwm/polybar"
 
-if [[ ! `pidof polybar` ]];
+if [[ ! $(pidof eww) ]]
 then
-  polybar -q bspwm -c "$DIR"/config.ini &
-else
-  polybar-msg cmd restart
+  eww open bar &
 fi
 
 if ps ax | grep -v grep | grep discord > /dev/null
