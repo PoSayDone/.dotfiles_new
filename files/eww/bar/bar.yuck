@@ -12,45 +12,8 @@
 (defwidget workspaces []
   (literal :content workspace)
 )
+
 (deflisten workspace "scripts/getWorkspaces")
-
-(defwidget actions-revealer []
-  (box :class "actions-revealer"
-       :orientation "h"
-       :space-evenly "false"
-    (revealer :transition "slideleft"
-              :duration "0.5s"
-              :reveal actions_are_opened
-      (box :class "opened-actions"
-           :orientation "h"
-           :space-evenly "false"
-        (button :class "network ${network_class}"
-                :tooltip "${network_name} (Press to open nmtui)"
-                :onclick "scripts/exec st -c network -e lessborder nmtui"
-                network_icon)
-        (button :class "volume ${volume_class}"
-                :tooltip "Volume: ${volume} (Press to open pavucontrol)"
-                :onclick "scripts/exec pavucontrol"
-                volume_icon)
-      )
-    )
-    (button :class "dispatcher ${actions_are_opened ? 'active' : ''}"
-            :onclick "eww update actions_are_opened=${!actions_are_opened}"
-            {actions_are_opened ? "" : ""})
-  )
-)
-(defvar actions_are_opened false)
-
-(defwidget controls-dispatcher []
-  (box :class "controls-dispatcher-box"
-       :orientation "h"
-       :space-evenly "false"
-    (button :class "dispatcher-btn"
-            :tooltip "Open controls"
-            :onclick "controls/toggle.sh"
-            "漣")
-  )
-)
 
 (defwidget left []
   (box :orientation "h"
@@ -59,7 +22,6 @@
        :class "left"
     (launcher)
     (workspaces)
-    (controls-dispatcher)
   )
 )
 
@@ -154,7 +116,7 @@
    :focusable true
    :stacking "bg"
    :reserve (struts :distance "52px" :side "top")
-   :windowtype "notification"
+   :windowtype "dock"
    :wm-ignore false
    :exclusive true
  (bar))

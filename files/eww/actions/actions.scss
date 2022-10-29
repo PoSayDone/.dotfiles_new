@@ -6,56 +6,43 @@
 }
 
 .controlsbox {
-  background-color: $contrastbg;
-  border-radius: 7px;
-  padding: 7px 12px;
+  border-radius: 24px;
+  background-color: $bg;
+  padding: 20px 14px 20px 18px;
+}
 
-  .vol-slider {
-    .vol-label {
-      font-size: 20px;
-      font-family: Iosevka Nerd Font;
-      margin-right: 15px;
-      color: $accent;
-    }
-    & scale trough {
-      all: unset;
-      border-radius: 10px;
-      background-color: $bg;
-      border: none;
-      min-height: 7px;
-      min-width: 250px;
-      margin-left: 3px;
-      & highlight {
-        all: unset;
-        background-color: $accent;
-        color: #000000;
-        border-radius: 10px;
-      }
+.slider {
+  .label{
+    font-family: 'JetBrainsMono Nerd Font';
+    color: $fg;
+    font-size: 18px;
+    padding-right: 20px;
+  }
+  .scale-label{
+    min-width: 40px;
+    color: $fg;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 20px;
+  }
+  trough {
+    background-color: $bg;
+    min-height: 6px;
+    border-radius: 100px;
+
+    highlight {
+      background-color: $accent;
+      border-radius: 100px;
     }
   }
+}
 
-  .br-slider {
-    margin-bottom: 12px;
-    .br-label {
-      font-size: 20px;
-      font-family: Iosevka Nerd Font;
-      margin-right: 15px;
-      color: $accent;
-    }
-    & scale trough {
-      all: unset;
-      border-radius: 10px;
-      background-color: $bg;
-      border: none;
-      min-height: 7px;
-      min-width: 250px;
-      margin-left: 3px;
-      & highlight {
-        all: unset;
-        background-color: $accent;
-        color: #000000;
-        border-radius: 10px;
-      }
+.active {
+  trough {
+    slider {
+      background: $accent;
+      border-radius: 100%;
+      margin: -8px;
     }
   }
 }
@@ -63,16 +50,17 @@
 .userinfobox {
   .info {
     .username {
-      font-family: SF Pro Display;
+      margin-left: 8px;
+      font-weight: 500;
     }
   }
   .useractions {
     .logout {
       background-color: $bg;
-      font-family: Iosevka Nerd Font;
+      font-family: 'JetBrainsMono Nerd Font';
       font-size: 18px;
-      padding: 2px 12px 2px 7px;
-      border-radius: 4px;
+      padding: 2px 11px 2px 8px;
+      border-radius: 10px;
       transition: all ease .2s;
       &:hover { background-color: $bg; }
       &:active { background-color: $bg; }
@@ -83,68 +71,91 @@
 .sysbuttonsbox {
   .block-container {
     .block {
-      background-color: $contrastbg;
-      padding: 10px 6px;
-      border-radius: 7px;
+      background-color: $bg; 
+      padding: 18px 0px 18px 6px;
+      min-width: 170px;
+      border-radius: 23px;
       transition: all ease .2s;
       color: $fg;
       &:hover { background-color: $bgSecondary; }
-      &:active { background-color: $contrastbg; }
+      &:active { 
+        background-color: $contrastbg; 
+        color: $fg;
+      }
       &.active {
-        background-color: $bg;
+        color: $bgSecondary;
+        background-color: $accent;
         &:hover { background-color: $bg; }
-        &:active { background-color: $bg; }
-        .sepbox .sep {
-          background-color: $bg;
+        &:active {
+        background-color: $bg;
         }
       }
       .iconbox .icon {
-        font-family: Iosevka Nerd Font;
-        padding: 0px 17px 0px 8px;
-      }
-      .sepbox .sep {
-        background-color: $bg;
-        margin: 0px 4px;
-        padding: 0px 1px;
+        font-size: 18px;
+        font-family: 'JetBrainsMono Nerd Font';
+        padding: 0px 17px 0px 12px;
       }
       .chevronbox {
-        font-family: Iosevka Nerd Font;
-        padding: 0px 12px;
+        margin-right: 14px;
+        font-family: 'JetBrainsMono Nerd Font';
       }
     }
+    .labelbox {
+      margin-right: 10px;
+    }
     .label {
-      font-family: SF Pro Display;
-      font-size: 14px;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .label__status {
+      font-size: 13px;
     }
   }
 }
 
+
 .musicbox {
-  .pic-container {
-    .picbox {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100px;
-      min-width: 225px;
-      border-radius: 7px;
-      padding: 10px;
-    }
-    // i've to make it hidden, so i'll translate it to the INFINITE! LMFAO
-    .hidden {
-      margin-top: -100px;
-    }
+  color: #fff;
+  border-radius: 26px;
+  padding: 11px 14px;
+  transition: background 250ms;
+  .musicbox__top {
+    font-size: 20px; 
+    font-family: 'JetBrainsMono Nerd Font';
   }
-  .musiccontrolsbox {
-    background-color: $bgSecondary;
-    border-radius: 7px;
-    padding: 7px 15px;
-    font-family: Iosevka Nerd Font;
-    .previousbutton, .nextbutton {
-      font-size: 23px;
-    }
-    .pausebutton {
-      padding: 0px 10px 0px 4px;
-    }
+}
+
+.musicbox__center--metadata {
+  text-decoration: none;
+  .title{
+    font-weight: 600;
+    transition: text 250ms;
   }
+  .artist{
+    font-weight: 400;
+    transition: text 250ms;
+  }
+}
+
+.pausebutton {
+  transition: background 250ms;
+  font-size: 16px;
+}
+
+.playing {
+  transition: all ease .2s;
+  border-radius: 15px;
+  
+  padding: 13px 21px 13px 16px;
+}
+
+.paused {
+  border-radius: 26px;  
+  transition: all ease .2s;
+  padding: 13px 19px;
+}
+
+
+.musicbox__bottom {
+ font-size: 23px;
 }

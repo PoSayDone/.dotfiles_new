@@ -3,7 +3,8 @@ DIR="$HOME/.config/bspwm/polybar"
 
 if [[ ! $(pidof eww) ]]
 then
-  eww open bar &
+  eww open bar && sleep 2
+  xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" $(xdo id -n eww-bar) 
 fi
 
 if ps ax | grep -v grep | grep discord > /dev/null
@@ -20,9 +21,3 @@ else
     exec kotatogram-desktop &
 fi
 
-if ps ax | grep -v grep | grep gxkb > /dev/null
-then
-    echo "gxkb service running, everything is fine"
-else
-    exec gxkb &
-fi

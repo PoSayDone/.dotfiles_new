@@ -1,0 +1,31 @@
+#!/bin/bash
+
+source $HOME/.config/bspwm/i3lock/colors
+
+i3lock \
+--insidever-color=$CLEAR     \
+--ringver-color=$VERIFYING   \
+\
+--insidewrong-color=$CLEAR   \
+--ringwrong-color=$WRONG     \
+\
+--inside-color=$BLANK        \
+--ring-color=$BLANK        \
+--line-color=$BLANK          \
+--separator-color=$BLANK   \
+\
+--verif-color=$TEXT          \
+--wrong-color=$TEXT          \
+--time-color=$TEXT           \
+--date-color=$TEXT           \
+--layout-color=$TEXT         \
+--keyhl-color=$WRONG         \
+--bshl-color=$WRONG          \
+--screen 1                   \
+--blur 6                     \
+--clock                      \
+--indicator                  \
+--time-str="%H:%M:%S"        \
+--date-str="%A, %Y-%m-%d"       \
+--keylayout 1                \
+--{time,date,layout,verif,wrong,greeter}-font="SF Pro Display"			\

@@ -1,28 +1,27 @@
-  $bg: rgba($color: #10171e, $alpha: 0.3);;
-  $contrastbg: #10171e;
-  $bgSecondary: #10171e;
-  $bgSecondaryAlt: #b6beca;
-  $fg: #b6beca;
-  $fgDim: #b6beca;
+  $bg: rgba($color: #0a090d, $alpha: 0.4);;
+  $contrastbg: #0a090d;
+  $bgSecondary: #0a090d;
+  $bgCal: rgba($color: #0a090d, $alpha: 0.6);
+  $fg: #ffe9ef;
+  $fgDim: #ffe9ef;
   $watermelon: #e05f65;
 
   // Aliases
   $background: $bg;
   $backgroundSecondary: $bgSecondary;
-  $backgroundSecondaryAlt: $bgSecondaryAlt;
   $foreground: $fg;
   $foregroundDim: $fgDim;
 
   $black: #242931;
-  $red: #e05f65;
-  $blue: #70a5eb;
-  $cyan: #74bee9;
+  $red: #9E6172;
+  $green: #4E3C5D;
+  $blue: #dd6d8c;
+  $cyan: #664482;
   $blue-desaturated: #74bee9;
   $magenta: #c68aee;
   $purple: #c68aee;
-  $green: #276F9A;
   $aquamarine: #94f7c5;
   $yellow: #f1cf8a;
-  $accent: $green;
+  $accent: $red;
   $javacafeMagenta: #c68aee;
   $javacafeBlue: #70a5eb;

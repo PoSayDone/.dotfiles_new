@@ -1,0 +1,7 @@
+
+  BLANK='#00000000'
+  CLEAR='#ffffff22'
+  DEFAULT='#ff00ffcc'
+  TEXT='#ffe9ef'
+  WRONG='#9E6172'
+  VERIFYING='#4E3C5D'

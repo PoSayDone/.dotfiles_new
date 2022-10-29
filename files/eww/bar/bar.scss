@@ -10,9 +10,9 @@
   margin: 7px 0 7px 7px;
   font-size: 16px;
   .dispatcher {
-    background-color: $green;
+    background-color: $accent;
     color: $bg;
-    border-radius: 7px;
+    border-radius: 10px;
     font-size: inherit;
     padding: 0 14px 0 10px;
   }
@@ -33,17 +33,17 @@
   }
   
   .011, .022, .033, .044, .055, .066, .077, .088, .099 {
-    color: $green;
+    color: $accent;
     padding: 7px 11px;
   }
 }
 
 .wintitle {
   background-color: $bg;
-  color: $green;
+  color: $cyan;
   margin: 7px 0;
   padding: 0 10px;
-  border-radius: 7px;
+  border-radius: 10px;
   font-size: 12px;
 }
 
@@ -52,7 +52,7 @@
   background: $bg;
   margin: 7px 7px 7px 0;
   padding: 0 8px 0 12px;
-  border-radius: 7px;
+  border-radius: 10px;
   .content {
     color: $fg;
     font-size: 14px;
@@ -72,8 +72,7 @@
 
 // calendar
 .cal-box {
-  font-family: SF Pro Display;
-  background-color: $bg;
+  background-color: $bgCal;
   border-radius: 8px;
   padding: 1rem 1rem .2rem;
 
@@ -115,14 +114,14 @@ calendar.highlight {
     &:hover { background-color: $bgSecondary; }
     &:active { background-color: $contrastbg; }
     padding: 0px 16px 0px 13px;
-    border-radius: 7px;
-    color: $blue;
+    border-radius: 10px;
+    color: $accent;
   }
 }
 
 .actionsbox {
   background: $bg;
-  border-radius: 7px;
+  border-radius: 10px;
   padding: 0 12px;
   font-family: Iosevka Nerd Font;
   margin: 7px 10px 7px 15px;
@@ -137,7 +136,7 @@ calendar.highlight {
     &:hover, &.active { background-color: $contrastbg; }
     &:active { background-color: $bgSecondary; }
     padding: 0px 13px 0px 12px;
-    border-radius: 7px;
+    border-radius: 10px;
   }
   .opened-actions {
     margin-right: 8px;
@@ -147,7 +146,7 @@ calendar.highlight {
       &:active { background-color: $bgSecondary; }
     padding: 1px 15px 0px 10px;
       border-radius: 7px;
-      &.disconnected { color: $red; border-bottom-color: $red; }
+      &.disconnected { color: $accent; border-bottom-color: $accent; }
       &.connected { color: $green; border-bottom-color: $green; }
     }
     .volume {
@@ -157,10 +156,10 @@ calendar.highlight {
       margin-left: 5px;
     padding: 1px 14px 0px 11px;
       border-radius: 7px;
-      &.red { color: $red; border-bottom-color: $red; }
+      &.red { color: $accent; border-bottom-color: $accent; }
       &.magenta { color: $magenta; border-bottom-color: $magenta; }
       &.yellow { color: $yellow; border-bottom-color: $yellow; }
-      &.blue { color: $blue; border-bottom-color: $blue; }
+      &.blue { color: $accent; border-bottom-color: $blue; }
     }
   }
 }
@@ -170,9 +169,9 @@ calendar.highlight {
   margin: 7px 7px 7px 0px;
   background: inherit;
   .dispatcher {
-    border-radius: 7px;
+    border-radius: 10px;
     background: $bg;
-    color: $red;
+    color: $cyan;
     font-size: 14px;
     padding: 0 10px 0 10px;
     &:hover { background-color: $contrastbg; }

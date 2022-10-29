@@ -1,8 +1,3 @@
-(defpoll art :interval "2s" "scripts/echoSongArt")
-(defpoll song_art :interval "2s" "scripts/getSongArt")
-(defpoll song_title :interval "2s" "scripts/getSongTitle")
-(defpoll full_song_title :interval "2s" "scripts/getSongTitle full")
-
 (defpoll calendar_day :interval "10h" "date '+%d'")
 (defpoll calendar_month :interval "10h" "./scripts/getCalendarMonth")
 (defpoll calendar_year :interval "10h" "date '+%Y'")
@@ -37,8 +32,11 @@
 (defpoll lithour :interval "30m" "date +%H")
 (defpoll litmin :interval "30s" "date +%M")
 
-(defpoll music_pic :interval "2s" "~/.config/eww/scripts/music/songart.sh get")
-(defpoll music_url :interval "1s" "~/.config/eww/scripts/music/songart.sh echo")
+; (defpoll music_button_accent :interval "1s" "~/.config/eww/scripts/music/songart.sh button_accent")
+; (defpoll music_button_text :interval "1s" "~/.config/eww/scripts/music/songart.sh button_text")
+; (defpoll music_background :interval "1500ms" "~/.config/eww/scripts/music/songart.sh accent_solid")
+; (defpoll music_url :interval "2s" "~/.config/eww/scripts/music/songart.sh echo")
+; (defpoll music_pic :interval "500ms" "~/.config/eww/scripts/music/songart.sh get")
 
 (defpoll music_title :interval "1s" "~/.config/eww/scripts/music/songdata.sh title")
 (defpoll music_artist :interval "1s" "~/.config/eww/scripts/music/songdata.sh artist")
@@ -50,3 +48,5 @@
 (defpoll bluetooth_state :interval "1s" "~/.config/eww/scripts/bluetooth state")
 (defpoll redshift_state :interval "1s" "~/.config/eww/scripts/redshift state")
 (defpoll mic_status :interval "1s" "~/.config/eww/scripts/mic status")
+
+(deflisten pctl_sub "~/.config/eww/scripts/playerctl.py")

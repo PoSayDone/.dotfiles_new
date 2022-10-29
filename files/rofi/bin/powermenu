@@ -39,7 +39,7 @@ case $chosen in
         fi
         ;;
     $lock)
-        betterlockscreen --lock
+        sh $HOME/.config/bspwm/i3lock/i3lock
         ;;
     $suspend)
 		ans=$($HOME/.config/bspwm/rofi/bin/confirm)
