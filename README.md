@@ -7,8 +7,8 @@ curl -s -L https://raw.githubusercontent.com/PoSayDone/.dotfiles_new/main/instal
 ```
 
 ## Screenshots
-![Screenshot_2022-09-08-16-12-17_1920x1080](https://user-images.githubusercontent.com/29358657/189108598-f0093ff2-7d7a-4d7c-9e8d-c88af11ecf53.png)
-![Screenshot_2022-09-08-16-12-26_1920x1080](https://user-images.githubusercontent.com/29358657/189108607-a521ed02-09da-4204-98cd-024c1e941976.png)
-![image](https://user-images.githubusercontent.com/29358657/189117065-955c551e-0a65-45fd-88cb-3e22d25c15f3.png)
-![Screenshot_2022-09-08-16-12-40_1920x1080](https://user-images.githubusercontent.com/29358657/189108611-765f5920-3baf-4492-8cb0-eeabee86de44.png)
-![Screenshot_2022-09-08-16-15-26_1920x1080](https://user-images.githubusercontent.com/29358657/189108613-37664885-3b02-4576-a3c5-6b0d02d630f9.png)
+![screenshot_20221029_130251](https://user-images.githubusercontent.com/29358657/198820941-9cac91a5-fc51-4cf9-a9bd-498c471a78d6.png)
+![image](https://user-images.githubusercontent.com/29358657/198821042-5e4e0a00-9710-4293-baf1-064b99590766.png)
+![image](https://user-images.githubusercontent.com/29358657/198821165-60cc8b75-d566-4a56-9994-c02d7abb867b.png)
+![image](https://user-images.githubusercontent.com/29358657/198821069-549f6bd7-8e2e-466c-a6f6-29bc4ca264f4.png)
+![image](https://user-images.githubusercontent.com/29358657/198821304-4b787d81-b985-427a-a584-b98321e6c77b.png)
