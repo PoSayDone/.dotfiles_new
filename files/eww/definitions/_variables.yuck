@@ -11,6 +11,9 @@
 (defpoll vol :interval "1s" "scripts/getVolume vol")
 (defpoll volume_icon :interval "1s" "scripts/getVolume icon")
 
+(defpoll battery_icon :interval "1s" "scripts/getBattery icon")
+(defpoll battery :interval "1s" "scripts/getBattery percent")
+
 (defpoll br_icon :interval "1s" "scripts/getBrightness icon")
 (defpoll br :interval "1s" "scripts/getBrightness br")
 

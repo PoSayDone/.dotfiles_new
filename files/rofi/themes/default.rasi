@@ -10,7 +10,7 @@
 @import "colors.rasi"
 
 configuration {
-	font: "SF Pro Display Semibold 11";
+	font: "Product Sans Medium 11";
 	show-icons: true;
 	icon-theme: "Papirus";
 	display-window: "";
@@ -24,7 +24,7 @@ window {
 	border: 0px;
 	border-color: @border;
 	border-radius: 12px;
-	width: 20%;
+	width: 22%;
 	location: center;
 	x-offset: 0;
 	y-offset: 0;
@@ -60,7 +60,7 @@ inputbar {
 listview {
 	background-color: @background-alt;
 	columns: 1;
-	lines: 7;
+	lines: 9;
 	spacing: 1%;
 	cycle: false;
 	dynamic: true;
@@ -104,7 +104,7 @@ element-text {
 
 element selected {
 	background-color: @selected;
-	text-color: @foreground;
+	text-color: @backgroundSolid;
 	border: 0% 0% 0% 0%;
 	border-radius: 100%;
 	border-color: @selected;

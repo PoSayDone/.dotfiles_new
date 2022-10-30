@@ -87,12 +87,21 @@
   )
 )
 
+(defwidget battery []
+  (box :class "battery__box"
+       :spacing 0
+  (label :class "battery__box_icon" :text "${battery_icon}")
+  (label :valign "center" :class "battery__box_percent" :text "${battery}%"))
+)
+
 (defwidget right []
   (box :class "right-modules"
        :space-evenly "false"
        :halign "end"
+       :spacing 7
        :orientation "h"
     (actionsbox)
+    (battery)
     (datebox)
     (powermenu)
   )

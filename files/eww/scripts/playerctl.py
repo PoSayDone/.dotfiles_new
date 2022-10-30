@@ -84,7 +84,7 @@ Arguments:
         # cache the album art and return the cache path.
         metadata["mpris:artUrl"] = cache_and_get(metadata)
 
-    metadata |= get_bright_dark_from_cover(metadata["mpris:artUrl"])
+    metadata |= get_material_you_colors(metadata["mpris:artUrl"])
     print(json.dumps(metadata))
 
 
@@ -136,7 +136,7 @@ def player_null_check(player_manager) -> bool:
             "status": "Stopped",
             "player": "none",
         }
-        metadata |= get_bright_dark_from_cover(default_cover) # overwrite fallback
+        metadata |= get_material_you_colors(default_cover) # overwrite fallback
         print(json.dumps(metadata))
         return False
     return True
@@ -222,35 +222,34 @@ def cache_and_get(metadata: dict) -> str:
     return default_cover
 
 
-def get_bright_dark_from_cover(image_path: str) -> dict:
-    """Get the brightest and lightest colors from an image and save them to a
+def get_material_you_colors(image_path: str) -> dict:
+    """Get the material you pallete colors from an image and save them to a
     JSON file if it isn't already. Then return the path to that JSON file.
 
     Arguments:
         image_path: The location of the image.
 
     Returns:
-        A dict of bright and dark color eg: {'bright': '#292929', 'dark': '#BEBFC1'}
+        A dict of image accent color, button accent color and button text color eg: {'image_accent': '#292929', 'button_accent': '#BEBFC1', 'button_text': '#292929'}
     """
     if image_path == default_cover:
-        return {'bright': '#292929', 'dark': '#BEBFC1'}
-
-    img = Image.open(image_path)
-    basewidth = 64
-    wpercent = (basewidth/float(img.size[0]))
-    hsize = int((float(img.size[1])*float(wpercent)))
-    img = img.resize((basewidth,hsize),Image.Resampling.LANCZOS)
-
-    theme = themeFromImage(img)
-    themePalette = theme.get("palettes")
-    themePalettePrimary = themePalette.get("primary")
+        return {'image_accent': '#292929', 'button_accent': '#BEBFC1', 'button_text': '#292929'}
 
     # if the color cache already exists then load that and return
     color_cached = pathlib.PosixPath(f"{os.path.dirname(image_path)}/colors.json")
     if color_cached.is_file():
-        return json.loads(color_cached.read_text())
+        parsed_colors = json.loads(color_cached.read_text())
+    else:
+        img = Image.open(image_path)
+        basewidth = 64
+        wpercent = (basewidth/float(img.size[0]))
+        hsize = int((float(img.size[1])*float(wpercent)))
+        img = img.resize((basewidth,hsize),Image.Resampling.LANCZOS)
 
-    parsed_colors = {"image_accent": hexFromArgb(themePalettePrimary.tone(40)), "button_accent": hexFromArgb(themePalettePrimary.tone(90)), "button_text": hexFromArgb(themePalettePrimary.tone(10))}
+        theme = themeFromImage(img)
+        themePalette = theme.get("palettes")
+        themePalettePrimary = themePalette.get("primary")
+        parsed_colors = {"image_accent": hexFromArgb(themePalettePrimary.tone(40)), "button_accent": hexFromArgb(themePalettePrimary.tone(90)), "button_text": hexFromArgb(themePalettePrimary.tone(10))}
 
     # parsed_colors = {"bright": colors[3], "dark": colors[9]}
     if "firefox-mpris" in image_path:

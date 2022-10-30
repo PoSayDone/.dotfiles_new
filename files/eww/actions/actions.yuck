@@ -114,7 +114,7 @@
 (defwidget music [title artist cover player]
   (box :class "musicbox"
        :orientation "v"
-       :spacing 0
+       :spacing 8
        :style "background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 30%, ${pctl_sub['image_accent']}), url(\"${pctl_sub['mpris:artUrl']}\"); background-size: cover; background-position: center;"
   (box :class "musicbox__top"
        :halign "start"

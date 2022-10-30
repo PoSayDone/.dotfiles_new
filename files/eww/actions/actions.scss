@@ -1,7 +1,7 @@
 .actions {
   background-color: $bg;
   color: $fg;
-  font-family: SF Pro Display;
+  font-family: Product Sans;
   padding: 10px;
 }
 
@@ -104,11 +104,12 @@
       margin-right: 10px;
     }
     .label {
-      font-weight: 600;
-      font-size: 13px;
+      font-family: "Product Sans";
+      font-weight: 500;
+      font-size: 14px;
     }
     .label__status {
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 }
@@ -117,18 +118,17 @@
 .musicbox {
   color: #fff;
   border-radius: 26px;
-  padding: 11px 14px;
+  padding: 11px 16px;
   transition: background 250ms;
   .musicbox__top {
-    font-size: 20px; 
+    font-size: 23px; 
     font-family: 'JetBrainsMono Nerd Font';
   }
 }
 
 .musicbox__center--metadata {
-  text-decoration: none;
   .title{
-    font-weight: 600;
+    font-weight: 500;
     transition: text 250ms;
   }
   .artist{

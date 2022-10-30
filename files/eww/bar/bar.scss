@@ -1,7 +1,7 @@
 .bar {
   border-radius: 12px;
   background-color: $bg;
-  font-family: SF Pro Display;
+  font-family: Product Sans;
   font-size: 12px;
   color: $fg;
 }
@@ -50,7 +50,7 @@
 .date-box {
     font-weight: bold;
   background: $bg;
-  margin: 7px 7px 7px 0;
+  margin: 7px 0px 7px 0;
   padding: 0 8px 0 12px;
   border-radius: 10px;
   .content {
@@ -124,48 +124,25 @@ calendar.highlight {
   border-radius: 10px;
   padding: 0 12px;
   font-family: Iosevka Nerd Font;
-  margin: 7px 10px 7px 15px;
+  margin: 7px 0px;
 }
 
-// actions revealer
-.actions-revealer {
-  margin: 7px 7px 7px 0;
-  font-size: 14px;
-  .dispatcher {
-    background-color: $bg;
-    &:hover, &.active { background-color: $contrastbg; }
-    &:active { background-color: $bgSecondary; }
-    padding: 0px 13px 0px 12px;
-    border-radius: 10px;
+.battery__box {
+  background: $bg;
+  border-radius: 10px;
+  margin: 7px 0;
+  padding: 0 11px 0 2px;
+  .battery__box_icon {
+    font-size: 16px;
   }
-  .opened-actions {
-    margin-right: 8px;
-    .network {
-      background-color: $bg;
-      &:hover { background-color: $contrastbg; }
-      &:active { background-color: $bgSecondary; }
-    padding: 1px 15px 0px 10px;
-      border-radius: 7px;
-      &.disconnected { color: $accent; border-bottom-color: $accent; }
-      &.connected { color: $green; border-bottom-color: $green; }
-    }
-    .volume {
-      background-color: $bg;
-      &:hover { background-color: $contrastbg; }
-      &:active { background-color: $bgSecondary; }
-      margin-left: 5px;
-    padding: 1px 14px 0px 11px;
-      border-radius: 7px;
-      &.red { color: $accent; border-bottom-color: $accent; }
-      &.magenta { color: $magenta; border-bottom-color: $magenta; }
-      &.yellow { color: $yellow; border-bottom-color: $yellow; }
-      &.blue { color: $accent; border-bottom-color: $blue; }
-    }
+  .battery__box_percent {
+    margin-left: -5px;
+    font-size: 14px;
+    font-weight: 500;
   }
 }
 
 .powermenu-box {
-  padding: 0 0px;
   margin: 7px 7px 7px 0px;
   background: inherit;
   .dispatcher {
@@ -173,16 +150,9 @@ calendar.highlight {
     background: $bg;
     color: $cyan;
     font-size: 14px;
-    padding: 0 10px 0 10px;
+    padding: 0 15px 0 11px;
     &:hover { background-color: $contrastbg; }
     &:active { background-color: $bgSecondary; }
   }
 }
 
-// powermenu
-.powermenu-container {
-  background: $bg;
-  color: $fg;
-  padding: 10px;
-  font-size: 55px;
-}

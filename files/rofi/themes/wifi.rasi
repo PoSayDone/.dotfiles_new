@@ -8,7 +8,7 @@ configuration {
 	me-accept-entry: [MousePrimary];
 }
 *{
-	font: "SF Mono 10";			//Font
+  font: "Product Sans Medium 11";
 	//Colors
 	foreground:#f8f8f2; 				//Text
 	accent: @selected; 					//Highlight

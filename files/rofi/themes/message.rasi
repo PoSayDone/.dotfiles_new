@@ -5,7 +5,7 @@
 * {
 	background-color: @background;
 	text-color: @foreground;
-	font: "SF Pro Display 12";
+  font: "Product Sans Medium 11";
 }
 
 window {

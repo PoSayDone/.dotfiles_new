@@ -142,6 +142,7 @@ bsprofi () {{
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {{
 		background:			{color0}B3;
+		backgroundSolid:			{color0};
 		backgroundAdditional:			{color0}66;
     background-alt: #00000000;
 		foreground:			${{FOREGROUND}};
