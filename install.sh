@@ -35,6 +35,7 @@ ln -sf $DIR/ranger $CONFIG_DIR/
 ln -sf $DIR/qt5ct $CONFIG_DIR/
 ln -sf $DIR/gtk-3.0 $CONFIG_DIR/
 ln -sf $DIR/betterlockscreenrc $CONFIG_DIR/
+ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
 mkdir $HOME/.fonts
 cp fonts/* $HOME/.fonts
 fc-cache -r
