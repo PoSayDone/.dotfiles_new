@@ -89,7 +89,7 @@
 
 (defwidget battery []
   (box :class "battery__box"
-       :spacing 0
+       :spacing 6
   (label :class "battery__box_icon" :text "${battery_icon}")
   (label :valign "center" :class "battery__box_percent" :text "${battery}%"))
 )
