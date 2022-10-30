@@ -36,7 +36,7 @@
            :space-evenly true
         (sysblock 
         :icon "${network_icon}"
-        :onclick "sh $HOME/.config/bspwm/rofi/bin/wifimenu"
+        :onclick "networkmanager_dmenu"
         :active "${network_status == 'Connected' ? true : false}"
         :label "${network_ssid}"
         )

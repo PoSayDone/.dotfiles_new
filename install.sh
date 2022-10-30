@@ -10,7 +10,7 @@ yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop'\
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop-bin' 'discord'\
-  'betterdiscordctl' 'steam' 'dash' 'eww-x11'
+  'betterdiscordctl' 'steam' 'dash' 'eww-x11' 'networkmanager-dmenu-git'
 yay --sync --noconfirm base-devel rustup python python-pip eww-git  \
   dunst bspwm sxkhd gobject-introspection imagemagick   \
   mpd mpc playerctl pamixer rofi redshift zsh jq todo-bin --needed
