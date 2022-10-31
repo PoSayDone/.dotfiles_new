@@ -9,10 +9,10 @@ yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop'\
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
-  'qt5-styleplugins' 'lutris' 'kotatogram-dekstop-bin' 'discord'\
-  'betterdiscordctl' 'steam' 'dash' 'eww-x11' 'networkmanager-dmenu-git'
-yay --sync --noconfirm base-devel rustup python python-pip eww-git  \
-  dunst bspwm sxkhd gobject-introspection imagemagick   \
+  'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
+  'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git'
+yay --sync --noconfirm base-devel rustup python python-pip \
+  dunst bspwm gobject-introspection imagemagick \
   mpd mpc playerctl pamixer rofi redshift zsh jq todo-bin --needed
 BACK_PID=$!
 wait $BACK_PID
@@ -37,7 +37,7 @@ ln -sf $DIR/gtk-3.0 $CONFIG_DIR/
 ln -sf $DIR/betterlockscreenrc $CONFIG_DIR/
 ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
 mkdir $HOME/.fonts
-cp fonts/* $HOME/.fonts
+cp $HOME/.dotfiles_new/files/fonts/* $HOME/.fonts
 fc-cache -r
 
 ln -sf $HOME/.dotfiles_new/files/scripts/autofocus $HOME/Scripts
@@ -45,7 +45,7 @@ ln -sf $HOME/.dotfiles_new/files/scripts/st_pad $HOME/Scripts
 ln -sf $HOME/.dotfiles_new/files/applications/lf.desktop $HOME/.local/share/applications
 ln -sf $HOME/.dotfiles_new/files/applications/nvim.desktop $HOME/.local/share/applications
 
-cp $HOME/.dotfiles_new/.zshenv $HOME/
+cp $HOME/.dotfiles_new/files/.zshenv $HOME/
 
 #Zathura
 git clone https://github.com/mlscarlson/zathura-pywal/
