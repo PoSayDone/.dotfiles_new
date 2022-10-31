@@ -3,7 +3,7 @@ DIR=$HOME/.config/bspwm
 CONFIG_DIR=$HOME/.config/
 
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst'\
+yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'nerd-fonts-jetbrains-mono'\
   'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen'\
   'picom-animations-git' 'xfce-polkit' 'xfce4-power-manager'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
