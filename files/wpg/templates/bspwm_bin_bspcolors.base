@@ -146,6 +146,7 @@ bsprofi () {{
 		backgroundAdditional:			{color0}66;
     background-alt: #00000000;
 		foreground:			${{FOREGROUND}};
+		foreground-alt:			${{ALTWHITE}};
 		selected:			${{RED}};
 		highlight:			${{YELLOW}};
 		urgent:				${{BLUE}};

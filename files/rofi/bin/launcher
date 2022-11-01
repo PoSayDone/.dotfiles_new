@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+## Author : Aditya Shakya (adi1090x)
+## Github : @adi1090x
+#
+## Rofi   : Launcher (Modi Drun, Run, File Browser, Window)
+#
+## Available Styles
+#
+## style-1     style-2     style-3     style-4     style-5
+## style-6     style-7     style-8     style-9     style-10
 
-DIR="$HOME/.config/bspwm"
+dir="$HOME/.config/rofi/launchers/type-7"
 
+## Run
 rofi \
-	-show drun \
-	-modi run,drun \
-	-no-lazy-grab \
-	-scroll-method 0 \
-	-drun-match-fields all \
-	-drun-display-format "{name}" \
-	-no-drun-show-actions \
-	-terminal st \
-	-theme "$DIR"/rofi/themes/default.rasi
-	-kb-cancel Alt-F1 \
+    -show drun \
+    -theme ~/.config/bspwm/rofi/themes/default.rasi

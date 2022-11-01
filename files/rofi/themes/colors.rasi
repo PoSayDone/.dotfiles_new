@@ -4,6 +4,7 @@ backgroundSolid:			#10171e;
 backgroundAdditional:			#10171e66;
     background-alt: #00000000;
 foreground:			#cefbff;
+foreground-alt:			#cefbff;
 selected:			#276F9A;
 highlight:			#BE906D;
 urgent:				#155A85;
