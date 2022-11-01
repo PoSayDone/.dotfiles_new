@@ -1,0 +1,10 @@
+#!/bin/bash                                                                                  
+
+sed -i "s/st.borderpx: 0/st.borderpx: 20/g" ~/.Xresources
+xrdb merge ~/.Xresources
+
+DESKTOP_PREVIOUS=$(bspc query -D -n focused)
+"$@" &
+PID_COMMAND=$!
+wait $PID_COMMAND
+bspc desktop -f "$DESKTOP_PREVIOUS"

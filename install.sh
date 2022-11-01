@@ -28,6 +28,7 @@ cd $DIR/
 ln -sf $DIR/wpg $CONFIG_DIR/
 wpg-install.sh -g
 
+ln -sf $DIR/Scripts $HOME/
 ln -sf $DIR/sxhkd $CONFIG_DIR/
 ln -sf $DIR/eww $CONFIG_DIR/
 ln -sf $DIR/lf $CONFIG_DIR/
@@ -40,10 +41,7 @@ mkdir $HOME/.fonts
 cp $HOME/.dotfiles_new/files/fonts/* $HOME/.fonts
 fc-cache -r
 
-ln -sf $HOME/.dotfiles_new/files/scripts/autofocus $HOME/Scripts
-ln -sf $HOME/.dotfiles_new/files/scripts/st_pad $HOME/Scripts
-ln -sf $HOME/.dotfiles_new/files/applications/lf.desktop $HOME/.local/share/applications
-ln -sf $HOME/.dotfiles_new/files/applications/nvim.desktop $HOME/.local/share/applications
+ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
 
 cp $HOME/.dotfiles_new/files/.zshenv $HOME/
 

@@ -1,0 +1,4 @@
+#!/bin/sh
+mcs -out:$1.exe $1.cs
+mono $1.exe
+rm -rf $1.exe
