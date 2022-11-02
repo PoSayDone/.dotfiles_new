@@ -36,6 +36,7 @@ ln -sf $DIR/ranger $CONFIG_DIR/
 ln -sf $DIR/qt5ct $CONFIG_DIR/
 ln -sf $DIR/gtk-3.0 $CONFIG_DIR/
 ln -sf $DIR/betterlockscreenrc $CONFIG_DIR/
+ln -sf $DIR/discord/* $CONFIG_DIR/BetterDicord/themes/
 ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
 mkdir $HOME/.fonts
 cp $HOME/.dotfiles_new/files/fonts/* $HOME/.fonts

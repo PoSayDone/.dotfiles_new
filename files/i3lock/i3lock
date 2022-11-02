@@ -2,7 +2,7 @@
 
 source $HOME/.config/bspwm/i3lock/colors
 
-i3lock \
+i3lock -i $HOME/.config/wpg/.current -L \
 --insidever-color=$CLEAR     \
 --ringver-color=$VERIFYING   \
 \
@@ -21,6 +21,8 @@ i3lock \
 --layout-color=$TEXT         \
 --keyhl-color=$WRONG         \
 --bshl-color=$WRONG          \
+--radius=90              \
+--ring-width=10              \
 --screen 1                   \
 --blur 6                     \
 --clock                      \
@@ -28,4 +30,10 @@ i3lock \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %Y-%m-%d"       \
 --keylayout 1                \
---{time,date,layout,verif,wrong,greeter}-font="Product Sans"			\
+--time-pos="60:80" \
+--layout-pos="60:138" \
+--{time,date}-font="SF Pro Display"			\
+--{time,date,layout,verif,wrong,greeter}-size=24			\
+--layout-size=18			\
+--{time,date,layout,verif,wrong,greeter}-align=1			\
+--{verif,wrong}-align=0			\

@@ -112,6 +112,8 @@ mode-switcher{
     text-color:                  @foreground;
 }
 button {
+    vertical-align:              0.5;
+    horizontal-align:            0.48;
     font:                        "JetBrains Mono Nerd Font 10";
     border-radius:               12px;
     padding:                     16px;
@@ -119,6 +121,7 @@ button {
     text-color:                  inherit;
     cursor:                      pointer;
 }
+
 button selected {
     background-color:            @selected;
     text-color:                  @backgroundSolid;

@@ -1,0 +1,9 @@
+#!/bin/bash                                                                                  
+
+DESKTOP_PREVIOUS=$(bspc query -D -n focused)
+$@ &
+PID_COMMAND=$!
+WATCH=$(bspc subscribe -c 1 node_add)
+NODE_NEW=${WATCH%% *}
+wait $PID_COMMAND
+bspc desktop -f $DESKTOP_PREVIOUS
