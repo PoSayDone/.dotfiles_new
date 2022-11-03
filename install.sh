@@ -3,9 +3,9 @@ DIR=$HOME/.config/bspwm
 CONFIG_DIR=$HOME/.config/
 
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 'nerd-fonts-jetbrains-mono'\
-  'maim' 'xclip' 'viewnior' 'feh' 'ksuperkey' 'betterlockscreen'\
-  'picom-animations-git' 'xfce-polkit' 'xfce4-power-manager'\
+yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 
+  'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh'\
+  'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop'\
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
@@ -16,6 +16,12 @@ yay --sync --noconfirm base-devel rustup python python-pip \
   mpd mpc playerctl pamixer rofi redshift zsh jq todo-bin --needed
 BACK_PID=$!
 wait $BACK_PID
+
+echo "Installing Picom"
+git clone https://github.com/FT-Labs/picom $DIR/picom
+cd $DIR/picom
+meson --buildtype=release . build
+sudo ninja -C build install
 
 echo "Cloning dotfiles"
 cd $HOME
@@ -58,7 +64,7 @@ curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/master/instal
 echo "Please, specify your path to colors.css in ~/.mozilla/firefox/...default-release/chrome/colores/blurred.css"
 
 #NvChad installation
-git clone https://github.com/NvChad/NvChad $HOME/config/nvim --depth 1
+git clone https://github.com/NvChad/NvChad $CONFIG_DIR/nvim --depth 1
 ln -sf $HOME/.dotfiles_new/files/nvchad/custom $CONFIG_DIR/nvim/lua/
 
 #qutebrowser pywal theme installation
