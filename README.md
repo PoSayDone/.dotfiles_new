@@ -7,6 +7,11 @@ BACKUP YOUR EXISTING DOTS!
 ```bash
 curl -s -L https://raw.githubusercontent.com/PoSayDone/.dotfiles_new/main/install.sh | bash
 ```
+## Usage
+To change your wallpaper and colorscheme please use wpgtk.
+
+https://user-images.githubusercontent.com/29358657/199653311-c9f1ec13-aef7-4411-b636-266d8910fcfc.mp4
+
 
 ## Screenshots
 ![screenshot_20221029_130251](https://user-images.githubusercontent.com/29358657/198820941-9cac91a5-fc51-4cf9-a9bd-498c471a78d6.png)
