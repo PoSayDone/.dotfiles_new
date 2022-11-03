@@ -26,7 +26,7 @@ cp files/.Xresources files/.xsettingsd $HOME
 ln -sf $HOME/.dotfiles_new/files/ $DIR
 cd $DIR/
 ln -sf $DIR/wpg $CONFIG_DIR/
-wpg-install.sh -g
+bash /usr/bin/wpg-install.sh -g
 
 ln -sf $DIR/Scripts $HOME/
 ln -sf $DIR/sxhkd $CONFIG_DIR/

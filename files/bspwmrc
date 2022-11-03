@@ -140,7 +140,8 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash $HOME/.fehbg
+
+bash $HOME/.config/wpg/wp_init.sh
 
 # Start bspwm scripts
 autostart
