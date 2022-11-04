@@ -1,4 +1,13 @@
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+st.font:         JetBrainsMono Nerd Font:style:medium:pixelsize=17
+
 st.borderpx: 20
-st.alpha: 1.0
+st.alpha: 0.7
 
 #include "/home/posaydone/.cache/wal/colors.Xresources"
