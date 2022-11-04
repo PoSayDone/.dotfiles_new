@@ -19,7 +19,7 @@ To make telegram use your system colorscheme you need to use theme from ~/.cache
 https://user-images.githubusercontent.com/29358657/200010081-ff5ddb1d-16bd-4d07-8165-bdea3a56b044.mp4
 
 ### Discord
-To make discord use your system colorscheme you need to use enable pywal theme in BetterDiscord settings, also you could enable Material You theme if you want.
+To make discord use your system colorscheme you need to enable pywal theme in BetterDiscord settings, also you could enable Material You theme if you want.
 
 https://user-images.githubusercontent.com/29358657/200011604-a043c53a-6e3c-4603-976f-6bfafa4bbb0a.mp4
 
