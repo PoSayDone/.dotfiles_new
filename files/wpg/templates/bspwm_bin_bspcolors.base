@@ -192,6 +192,8 @@ bspcss () {{
 bspapps () {{
   exec python3 $DIR/scripts/wal-telegram/pallete-gen.py &
   exec pywal-discord &
+  exec spicetify update &
+  exec spicetifyreload &
   exec zathura-pywal -a 0.7 &
   exec qutebrowser :config-source &
 }}
@@ -210,6 +212,27 @@ bspnvim () {{
   sed -i "s/systemAccent.*/systemAccent = {{ fg = \"${{YELLOW}}\" }}\,/" "$HOME/.config/bspwm/nvchad/custom/highlights.lua"
 }}
 
+# bspspoti () {{
+# 	cat > $DIR/spicetify/ziro/color.ini <<- EOF	
+#   [blue-dark]
+#   text               = {color15.strip}
+#   subtext            = {color15.strip}
+#   main               = {color0.strip}
+#   sidebar            = {color0.strip}
+#   player             = {color0.strip}
+#   card               = {color8.strip}
+#   shadow             = {color0.strip}
+#   selected-row       = {color1.strip}
+#   button             = {color1.strip}
+#   button-active      = {color1.strip}
+#   button-disabled    = {color1.strip}
+#   tab-active         = {color9.strip}
+#   notification       = 171d20
+#   notification-error = fb7c7c
+#   misc               = 1e2529
+# 	EOF
+# }}
+
 main () {{
 	getcolors
   bspeww
@@ -218,7 +241,7 @@ main () {{
 	bsprofi
 	bspdunst
   bspvscode
-  bspcss
+  # bspspoti
   bspstartpage
   bspnvim
   bspapps

@@ -20,3 +20,9 @@ else
     exec kotatogram-desktop &
 fi
 
+if ps ax | grep -v grep | grep spicetify > /dev/null
+then
+    echo "telegram-desktop service running, everything is fine"
+else
+    exec kotatogram-desktop &
+fi

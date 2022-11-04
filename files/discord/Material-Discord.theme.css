@@ -1576,7 +1576,7 @@ html:not(.app-focused) .typeWindows-2-g3UY .winButton-3UMjdg.winButtonMinMax-3Rs
  *
  */
 .container-2o3qEW {
-  
+  background: var(--color0); 
 }
 
 .members-3WRCEx, .members-3WRCEx > div {

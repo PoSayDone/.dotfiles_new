@@ -1,0 +1,3 @@
+#!/bin/bash
+url=$(curl http://localhost:9222/json/list | jq -r ".[] | .webSocketDebuggerUrl")
+wscat --connect $url --execute "{\"id\":1,\"method\":\"Page.reload\"}"

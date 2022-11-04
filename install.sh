@@ -62,6 +62,8 @@ ln -sf $DIR/discord/* $CONFIG_DIR/BetterDicord/themes/
 ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
 clear
 
+
+
 #Fonts
 echo -e "\e[1;31m${bold}Coping fonts${normal}\e[0m"
 mkdir $HOME/.fonts
@@ -72,6 +74,7 @@ clear
 #Lf, nvim shortcuts
 echo -e "\e[1;31m${bold}Creating apps shortcuts${normal}\e[0m"
 sudo ln -sf $DIR/Scripts/lf-archivemount /usr/local/bin/
+sudo ln -sf $DIR/Scripts/spicetifyreload /usr/local/bin/
 ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
 clear
 
