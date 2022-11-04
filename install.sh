@@ -11,8 +11,8 @@ yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
   'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
-  'base-devel' 'rustup' 'python' 'python-pip' 'lf'\
-  'gobject-introspection' 'imagemagick' 'zsh' 'jq'\
+  'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
+  'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' --needed
 BACK_PID=$!
 wait $BACK_PID
@@ -35,6 +35,7 @@ ln -sf $DIR/wpg $CONFIG_DIR/
 bash /usr/bin/wpg-install.sh -g
 
 ln -sf $DIR/Scripts $HOME/
+ln -sf $DIR/.zshenv $HOME/
 ln -sf $DIR/sxhkd $CONFIG_DIR/
 ln -sf $DIR/eww $CONFIG_DIR/
 ln -sf $DIR/lf $CONFIG_DIR/
@@ -45,13 +46,13 @@ ln -sf $DIR/gtk-3.0 $CONFIG_DIR/
 ln -sf $DIR/betterlockscreenrc $CONFIG_DIR/
 ln -sf $DIR/discord/* $CONFIG_DIR/BetterDicord/themes/
 ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
+
 mkdir $HOME/.fonts
 cp $HOME/.dotfiles_new/files/fonts/* $HOME/.fonts
 fc-cache -r
 
+sudo ln -sf $DIR/Scripts/lf-archivemount /usr/local/bin/
 ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
-
-cp $HOME/.dotfiles_new/files/.zshenv $HOME/
 
 #Suckless Terminal
 git clone https://github.com/siduck/st/
@@ -78,6 +79,15 @@ ln -sf $HOME/.dotfiles_new/files/nvchad/custom $CONFIG_DIR/nvim/lua/
 #qutebrowser pywal theme installation
 git clone https://github.com/makman12/pywalQute.git $CONFIG_DIR/qutebrowser/pywalQute/
 ln -sf $HOME/.dotfiles_new/files/qutebrowser/config.py $CONFIG_DIR/qutebrowser/
+
+#Python lib for colors in player
+git clone https://github.com/avanishsubbiah/material-color-utilities-python
+cd material-color-utilities-python
+sed -i '/\[tool\.poetry\.dependencies\]/a python="^3.7"' pyproject.toml
+poetry build
+poetry install
+cd ..
+rm -rf material-color-utilities-python
 
 chsh -s $(which zsh)
 
