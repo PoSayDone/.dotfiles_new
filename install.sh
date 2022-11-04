@@ -37,7 +37,7 @@ clear
 echo -e "\e[1;31m${bold}Cloning dotfiles${normal}\e[0m"
 cd $HOME
 git clone https://github.com/PoSayDone/.dotfiles_new.git
-rm -rf $DIR $CONFIG_DIR/wpg $CONFIG_DIR/sxhkd $CONFIG_DIR/lf $CONFIG_DIR/qt5ct $CONFIG_DIR/gtk-3.0 $HOME/.Xresources $HOME/.xsettingsd
+rm -rf $DIR $CONFIG_DIR/wpg $CONFIG_DIR/sxhkd $CONFIG_DIR/lf $CONFIG_DIR/qt5ct $CONFIG_DIR/gtk-3.0 $HOME/.Xresources $HOME/.xsettingsd $CONFIG_DIR/wpg $HOME/.zshenv $CONFIG_DIR/dunst $CONFIG_DIR/networkmanager-dmenu
 cd .dotfiles_new
 ln -sf $HOME/.dotfiles_new/files/ $DIR
 cd $DIR/

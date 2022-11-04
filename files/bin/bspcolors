@@ -192,6 +192,7 @@ bspcss () {
 bspapps () {
   exec python3 $DIR/scripts/wal-telegram/pallete-gen.py &
   exec pywal-discord &
+  exec spicetify apply &
   exec zathura-pywal -a 0.7 &
   exec qutebrowser :config-source &
 }
