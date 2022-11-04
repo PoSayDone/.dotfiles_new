@@ -53,3 +53,5 @@
 (defpoll mic_status :interval "1s" "~/.config/eww/scripts/mic status")
 
 (deflisten pctl_sub "~/.config/eww/scripts/playerctl.py")
+
+(deflisten xdo "~/.config/eww/scripts/xdo")

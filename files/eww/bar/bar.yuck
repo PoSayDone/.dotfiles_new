@@ -22,6 +22,7 @@
        :class "left"
     (launcher)
     (workspaces)
+    {xdo}
   )
 )
 
