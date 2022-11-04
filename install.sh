@@ -8,7 +8,7 @@ clear
 
 #Dependencies
 echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
-yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
+yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
   'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
@@ -17,7 +17,7 @@ yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
   'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
   'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
-  'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry'\
+  'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry' 'xdo'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' 'spicetify-cli' --needed
 BACK_PID=$!
 wait $BACK_PID
