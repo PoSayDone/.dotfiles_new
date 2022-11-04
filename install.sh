@@ -3,17 +3,17 @@ DIR=$HOME/.config/bspwm
 CONFIG_DIR=$HOME/.config/
 
 echo "Installing dependencies"
-yay -S --noconfirm 'sxhkd' 'alacritty' 'rofi' 'polybar' 'dunst' 
+yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
   'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop'\
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
-  'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git'
-yay --sync --noconfirm base-devel rustup python python-pip \
-  dunst bspwm gobject-introspection imagemagick \
-  mpd mpc playerctl pamixer rofi redshift zsh jq todo-bin --needed
+  'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
+  'base-devel' 'rustup' 'python' 'python-pip'\
+  'gobject-introspection' 'imagemagick' 'zsh' 'jq'\
+  'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' --needed
 BACK_PID=$!
 wait $BACK_PID
 
@@ -38,6 +38,7 @@ ln -sf $DIR/Scripts $HOME/
 ln -sf $DIR/sxhkd $CONFIG_DIR/
 ln -sf $DIR/eww $CONFIG_DIR/
 ln -sf $DIR/lf $CONFIG_DIR/
+ln -sf $DIR/dunst $CONFIG_DIR/
 ln -sf $DIR/ranger $CONFIG_DIR/
 ln -sf $DIR/qt5ct $CONFIG_DIR/
 ln -sf $DIR/gtk-3.0 $CONFIG_DIR/
@@ -51,6 +52,13 @@ fc-cache -r
 ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
 
 cp $HOME/.dotfiles_new/files/.zshenv $HOME/
+
+#Suckless Terminal
+git clone https://github.com/siduck/st/
+cd st
+sudo make install
+cd ..
+rm -rf st
 
 #Zathura
 git clone https://github.com/mlscarlson/zathura-pywal/
@@ -71,4 +79,6 @@ ln -sf $HOME/.dotfiles_new/files/nvchad/custom $CONFIG_DIR/nvim/lua/
 git clone https://github.com/makman12/pywalQute.git $CONFIG_DIR/qutebrowser/pywalQute/
 ln -sf $HOME/.dotfiles_new/files/qutebrowser/config.py $CONFIG_DIR/qutebrowser/
 
-wpg -ns 13.jpg
+chsh -s $(which zsh)
+
+wpg -ns 63.jpg

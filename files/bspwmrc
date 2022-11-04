@@ -50,7 +50,7 @@ bspc config pointer_motion_interval 10
 ## Window rules ----------------------------------------------#
 
 # 1 > terminal
-bspc rule -a st-256color desktop='^1' follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
+bspc rule -a St desktop='^1' follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web
