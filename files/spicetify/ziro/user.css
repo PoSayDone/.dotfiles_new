@@ -1,11 +1,32 @@
 :root {
   --br-1: 14px;
   --br-2: 14px;
+  --br-3: 24px;
   --scrollbar: unset;
 }
 * {
   font-family: 'Product Sans' !important;
 }
+
+.main-entityHeader-image {
+  border-radius: var(--br-3);
+}
+
+.main-actionBar-ActionBarRow button:not(.bqeOGM){
+  border-radius: 12px;
+}
+.cover-art{
+  border-radius: var(--br-1) !important;
+}
+
+[dir=ltr] .view-homeShortcutsGrid-shortcut .view-homeShortcutsGrid-image, .view-homeShortcutsGrid-imageWrapper{
+  border-radius: 12px !important;
+}
+
+.view-homeShortcutsGrid-shortcut {
+  border-radius: var(--br-1);
+}
+
 /* background */
 .main-home-homeHeader,
 .main-entityHeader-backgroundColor,
@@ -148,7 +169,7 @@
   border-radius: var(--br-2);
 }
 .cover-art-image {
-  border-radius: calc(var(--br-2) / 2);
+  border-radius: var(--br-2);
 }
 .main-coverSlotCollapsed-container[aria-hidden='true'] .cover-art-image {
   border-radius: var(--br-1);

@@ -4,6 +4,8 @@ CONFIG_DIR=$HOME/.config/
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+clear
+
 #Dependencies
 echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
 yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
