@@ -8,10 +8,20 @@ BACKUP YOUR EXISTING DOTS!
 curl -s -L https://raw.githubusercontent.com/PoSayDone/.dotfiles_new/main/install.sh | bash
 ```
 ## Usage
+### Wallpaper and colorscheme
 To change your wallpaper and colorscheme please use wpgtk.
 
 https://user-images.githubusercontent.com/29358657/199653311-c9f1ec13-aef7-4411-b636-266d8910fcfc.mp4
 
+### Telegram
+To make telegram use your system colorscheme you need to use theme from ~/.cache folder
+
+https://user-images.githubusercontent.com/29358657/200010081-ff5ddb1d-16bd-4d07-8165-bdea3a56b044.mp4
+
+### Discord
+To make discord use your system colorscheme you need to use enable pywal theme in BetterDiscord settings, also you could enable Material You theme if you want.
+
+https://user-images.githubusercontent.com/29358657/200011604-a043c53a-6e3c-4603-976f-6bfafa4bbb0a.mp4
 
 ## Screenshots
 ![screenshot_20221103_104157](https://user-images.githubusercontent.com/29358657/199654477-188d79a5-d963-4623-9b59-7b0046999095.png)
