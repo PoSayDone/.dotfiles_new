@@ -11,7 +11,7 @@ yay --sync --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' \
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
   'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
-  'base-devel' 'rustup' 'python' 'python-pip'\
+  'base-devel' 'rustup' 'python' 'python-pip' 'lf'\
   'gobject-introspection' 'imagemagick' 'zsh' 'jq'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' --needed
 BACK_PID=$!
