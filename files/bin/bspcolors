@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#ffcfcb"
-	BACKGROUND="#03120B"
+	FOREGROUND="#ffffce"
+	BACKGROUND="#081211"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#03120B"
-	RED="#D9222E"
-	GREEN="#8F2835"
-	YELLOW="#F82C38"
-	BLUE="#9E3245"
-	MAGENTA="#EB3044"
-	CYAN="#AB2734"
-	WHITE="#e19e9b"
-	ALTBLACK="#083e25"
-	ALTRED="#ff1b2d"
-	ALTGREEN="#c5283b"
-	ALTYELLOW="#ff2637"
-	ALTBLUE="#da3350"
-	ALTMAGENTA="#ff2b49"
-	ALTCYAN="#ec2438"
-	ALTWHITE="#ffcfcb"
+	BLACK="#081211"
+	RED="#C2733F"
+	GREEN="#47636B"
+	YELLOW="#98674F"
+	BLUE="#325765"
+	MAGENTA="#695A55"
+	CYAN="#4F4C50"
+	WHITE="#e7c89e"
+	ALTBLACK="#163532"
+	ALTRED="#ff9241"
+	ALTGREEN="#508796"
+	ALTYELLOW="#d48057"
+	ALTBLUE="#37758d"
+	ALTMAGENTA="#946e62"
+	ALTCYAN="#6b5872"
+	ALTWHITE="#ffffce"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #B303120B
-  active = #ad1b24
-  inactive = #771319
+	background = #B3081211
+  active = #9b5c32
+  inactive = #6a3f22
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -135,15 +135,15 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#03120BB3",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#081211B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#03120BB3;
-		backgroundSolid:			#03120B;
-		backgroundAdditional:			#03120B66;
+		background:			#081211B3;
+		backgroundSolid:			#081211;
+		backgroundAdditional:			#08121166;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		foreground-alt:			${ALTWHITE};
@@ -183,7 +183,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #03120BB3;
+		--bg-color: #081211B3;
 	}
 	EOF
 }
@@ -212,6 +212,27 @@ bspnvim () {
   sed -i "s/systemAccent.*/systemAccent = { fg = \"${YELLOW}\" }\,/" "$HOME/.config/bspwm/nvchad/custom/highlights.lua"
 }
 
+# bspspoti () {
+# 	cat > $DIR/spicetify/ziro/color.ini <<- EOF	
+#   [blue-dark]
+#   text               = ffffce
+#   subtext            = ffffce
+#   main               = 081211
+#   sidebar            = 081211
+#   player             = 081211
+#   card               = 163532
+#   shadow             = 081211
+#   selected-row       = C2733F
+#   button             = C2733F
+#   button-active      = C2733F
+#   button-disabled    = C2733F
+#   tab-active         = ff9241
+#   notification       = 171d20
+#   notification-error = fb7c7c
+#   misc               = 1e2529
+# 	EOF
+# }
+
 main () {
 	getcolors
   bspeww
@@ -220,6 +241,7 @@ main () {
 	bsprofi
 	bspdunst
   bspvscode
+  # bspspoti
   bspstartpage
   bspnvim
   bspapps

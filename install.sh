@@ -25,8 +25,8 @@ clear
 
 #Picom
 echo -e "\e[1;31m${bold}Installing Picom${normal}\e[0m"
-git clone https://github.com/FT-Labs/picom $DIR/picom
-cd $DIR/picom
+git clone https://github.com/FT-Labs/picom
+cd picom
 meson --buildtype=release . build
 sudo ninja -C build install
 cd ..
@@ -35,12 +35,10 @@ clear
 
 #Cloning dots
 echo -e "\e[1;31m${bold}Cloning dotfiles${normal}\e[0m"
-cd $HOME
 git clone https://github.com/PoSayDone/.dotfiles_new.git
 rm -rf $DIR $CONFIG_DIR/wpg $CONFIG_DIR/sxhkd $CONFIG_DIR/lf $CONFIG_DIR/qt5ct $CONFIG_DIR/gtk-3.0 $HOME/.Xresources $HOME/.xsettingsd $CONFIG_DIR/wpg $HOME/.zshenv $CONFIG_DIR/dunst $CONFIG_DIR/networkmanager-dmenu
 cd .dotfiles_new
 ln -sf $HOME/.dotfiles_new/files/ $DIR
-cd $DIR/
 ln -sf $DIR/wpg $CONFIG_DIR/
 bash /usr/bin/wpg-install.sh -g
 clear
@@ -142,4 +140,5 @@ clear
 #wpgtk
 echo -e "\e[1;31m${bold}Setting wallpaper and theme${normal}\e[0m"
 wpg -ns 63.jpg
+$DIR/wpg/wp_init.sh
 clear
