@@ -9,19 +9,21 @@ clear
 #Dependencies
 echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
 yay -Syu --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
-  'maim' 'xclip' 'viewnior' 'feh' 'gd' 'bluez'\
+  'maim' 'xclip' 'viewnior' 'feh' 'gd' 'bluez' 'trash-cli'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager' 'brightnessctl'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'meson'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'ninja'\
-  'neovim' 'qutebrowser' 'apple-fonts' 'libconfig'\
+  'neovim' 'qutebrowser' 'apple-fonts' 'libconfig' 'spotify'\
   'qt5-styleplugins' 'lutris' 'discord' 'cmake' 'libev' 'uthash' 'bluez-utils'\
   'betterdiscordctl' 'dash' 'eww' 'networkmanager-dmenu-git' 'xorg'\
   'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
   'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry' 'xdo'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' 'spicetify-cli' --needed
+pip install utils material_color_utilities_python
 BACK_PID=$!
 wait $BACK_PID
 clear
+
 
 cd $HOME
 
@@ -106,17 +108,6 @@ clear
 echo -e "\e[1;31m${bold}Installing pywal theme for qutebrowser${normal}\e[0m"
 git clone https://github.com/makman12/pywalQute.git $CONFIG_DIR/qutebrowser/pywalQute/
 ln -sf $HOME/.dotfiles_new/files/qutebrowser/config.py $CONFIG_DIR/qutebrowser/
-clear
-
-#Python lib for colors in player
-echo -e "\e[1;31m${bold}Installing Material You Python library${normal}\e[0m"
-git clone https://github.com/avanishsubbiah/material-color-utilities-python
-cd material-color-utilities-python
-sed -i '/\[tool\.poetry\.dependencies\]/a python="^3.7"' pyproject.toml
-poetry build
-poetry install
-cd ..
-rm -rf material-color-utilities-python
 clear
 
 #Spicetify
