@@ -9,13 +9,13 @@ clear
 #Dependencies
 echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
 yay -Syu --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
-  'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh'\
+  'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh' 'gd'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'meson'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'ninja'\
-  'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
-  'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
-  'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
+  'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete' 'libconfig'\
+  'qt5-styleplugins' 'lutris' 'discord' 'cmake' 'libev' 'uthash'\
+  'betterdiscordctl' 'dash' 'eww' 'networkmanager-dmenu-git' \
   'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
   'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry' 'xdo'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' 'spicetify-cli' --needed
@@ -137,6 +137,8 @@ clear
 #Shell
 echo -e "\e[1;31m${bold}Changing shell${normal}\e[0m"
 chsh -s $(which zsh)
+BACK_PID=$!
+wait $BACK_PID
 clear
 
 #wpgtk
