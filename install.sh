@@ -9,13 +9,13 @@ clear
 #Dependencies
 echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
 yay -Syu --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
-  'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh' 'gd'\
-  'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
+  'maim' 'xclip' 'viewnior' 'feh' 'gd' 'bluez'\
+  'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager' 'brightnessctl'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'meson'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'ninja'\
-  'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete' 'libconfig'\
-  'qt5-styleplugins' 'lutris' 'discord' 'cmake' 'libev' 'uthash'\
-  'betterdiscordctl' 'dash' 'eww' 'networkmanager-dmenu-git' \
+  'neovim' 'qutebrowser' 'apple-fonts' 'libconfig'\
+  'qt5-styleplugins' 'lutris' 'discord' 'cmake' 'libev' 'uthash' 'bluez-utils'\
+  'betterdiscordctl' 'dash' 'eww' 'networkmanager-dmenu-git' 'xorg'\
   'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
   'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry' 'xdo'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' 'spicetify-cli' --needed
@@ -62,8 +62,6 @@ ln -sf $DIR/discord/* $CONFIG_DIR/BetterDicord/themes/
 ln -sf $DIR/networkmanager-dmenu $CONFIG_DIR/
 clear
 
-
-
 #Fonts
 echo -e "\e[1;31m${bold}Coping fonts${normal}\e[0m"
 mkdir $HOME/.fonts
@@ -75,6 +73,8 @@ clear
 echo -e "\e[1;31m${bold}Creating apps shortcuts${normal}\e[0m"
 sudo ln -sf $DIR/Scripts/lf-archivemount /usr/local/bin/
 sudo ln -sf $DIR/Scripts/spicetifyreload /usr/local/bin/
+sudo ln -sf $DIR/Scripts/st_pad /usr/local/bin/
+sudo ln -sf $DIR/Scripts/autofocus /usr/local/bin/
 ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
 clear
 
