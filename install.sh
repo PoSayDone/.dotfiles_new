@@ -23,6 +23,8 @@ BACK_PID=$!
 wait $BACK_PID
 clear
 
+cd $HOME
+
 #Picom
 echo -e "\e[1;31m${bold}Installing Picom${normal}\e[0m"
 git clone https://github.com/FT-Labs/picom
