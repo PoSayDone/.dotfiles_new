@@ -11,8 +11,8 @@ echo -e "\e[1;31m${bold}Installing dependencies${normal}\e[0m"
 yay -Syu --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
   'nerd-fonts-jetbrains-mono' 'maim' 'xclip' 'viewnior' 'feh'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager'\
-  'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk'\
-  'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop'\
+  'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'meson'\
+  'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'ninja'\
   'neovim' 'qutebrowser' 'apple-fonts' 'nerd-fonts-complete'\
   'qt5-styleplugins' 'lutris' 'kotatogram-dekstop' 'discord'\
   'betterdiscordctl' 'steam' 'dash' 'eww' 'networkmanager-dmenu-git' \
