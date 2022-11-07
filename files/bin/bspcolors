@@ -8,25 +8,25 @@
 DIR="$HOME/.config/bspwm"
 
 getcolors () {
-	FOREGROUND="#ffffce"
-	BACKGROUND="#081211"
+	FOREGROUND="#fffaff"
+	BACKGROUND="#0A0E11"
 	CURSOR="$(xrdb -query | grep 'cursorColor:'| awk '{print $NF}')"
-	BLACK="#081211"
-	RED="#C2733F"
-	GREEN="#47636B"
-	YELLOW="#98674F"
-	BLUE="#325765"
-	MAGENTA="#695A55"
-	CYAN="#4F4C50"
-	WHITE="#e7c89e"
-	ALTBLACK="#163532"
-	ALTRED="#ff9241"
-	ALTGREEN="#508796"
-	ALTYELLOW="#d48057"
-	ALTBLUE="#37758d"
-	ALTMAGENTA="#946e62"
-	ALTCYAN="#6b5872"
-	ALTWHITE="#ffffce"
+	BLACK="#0A0E11"
+	RED="#92A7CF"
+	GREEN="#6B89B6"
+	YELLOW="#959DB2"
+	BLUE="#5E81B4"
+	MAGENTA="#A1AFD0"
+	CYAN="#7594C5"
+	WHITE="#dcd4da"
+	ALTBLACK="#1c2731"
+	ALTRED="#a6d1ff"
+	ALTGREEN="#78aeff"
+	ALTYELLOW="#acc2fc"
+	ALTBLUE="#68a4fb"
+	ALTMAGENTA="#b9d9ff"
+	ALTCYAN="#83bbff"
+	ALTWHITE="#fffaff"
 }
 
 bspbar () {
@@ -34,9 +34,9 @@ bspbar () {
 	[colors]
 
 	foreground = ${FOREGROUND}
-	background = #B3081211
-  active = #9b5c32
-  inactive = #6a3f22
+	background = #B30A0E11
+  active = #7485a5
+  inactive = #505b71
 	black = ${BLACK}
 	red = ${RED}
 	green = ${GREEN}
@@ -135,15 +135,15 @@ bspterm () {
 
 #code-transparent needed
 bspvscode () {
-	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#081211B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
+	sed -i 's/\("workbench\.background"\s*:\s*\).*$/\1"#0A0E11B3",/' "$HOME/.config/Code - OSS/User/settings.json" &
 }
 
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			#081211B3;
-		backgroundSolid:			#081211;
-		backgroundAdditional:			#08121166;
+		background:			#0A0E11B3;
+		backgroundSolid:			#0A0E11;
+		backgroundAdditional:			#0A0E1166;
     background-alt: #00000000;
 		foreground:			${FOREGROUND};
 		foreground-alt:			${ALTWHITE};
@@ -183,7 +183,7 @@ bspdunst () {
 bspcss () {
 	cat > $DIR/css/colors.css <<- EOF	
 	:root {
-		--bg-color: #081211B3;
+		--bg-color: #0A0E11B3;
 	}
 	EOF
 }
@@ -215,18 +215,18 @@ bspnvim () {
 # bspspoti () {
 # 	cat > $DIR/spicetify/ziro/color.ini <<- EOF	
 #   [blue-dark]
-#   text               = ffffce
-#   subtext            = ffffce
-#   main               = 081211
-#   sidebar            = 081211
-#   player             = 081211
-#   card               = 163532
-#   shadow             = 081211
-#   selected-row       = C2733F
-#   button             = C2733F
-#   button-active      = C2733F
-#   button-disabled    = C2733F
-#   tab-active         = ff9241
+#   text               = fffaff
+#   subtext            = fffaff
+#   main               = 0A0E11
+#   sidebar            = 0A0E11
+#   player             = 0A0E11
+#   card               = 1c2731
+#   shadow             = 0A0E11
+#   selected-row       = 92A7CF
+#   button             = 92A7CF
+#   button-active      = 92A7CF
+#   button-disabled    = 92A7CF
+#   tab-active         = a6d1ff
 #   notification       = 171d20
 #   notification-error = fb7c7c
 #   misc               = 1e2529

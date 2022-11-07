@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR=$HOME/.config/bspwm
-CONFIG_DIR=$HOME/.config/
+CONFIG_DIR=$HOME/.config
 bold=$(tput bold)
 normal=$(tput sgr0)
 
@@ -68,8 +68,6 @@ clear
 echo -e "\e[1;31m${bold}Coping fonts${normal}\e[0m"
 mkdir $HOME/.fonts
 cp $HOME/.dotfiles_new/files/fonts/* $HOME/.fonts
-sudo mkdir /usr/local/share/fonts
-cp $HOME/.dotfiles_new/files/fonts/* /usr/local/share/fonts
 fc-cache -r
 clear
 
@@ -80,7 +78,8 @@ sudo ln -sf $DIR/Scripts/spicetifyreload /usr/local/bin/
 sudo ln -sf $DIR/Scripts/st_pad /usr/local/bin/
 sudo ln -sf $DIR/Scripts/autofocus /usr/local/bin/
 sudo ln -sf $DIR/Scripts/autofocus_pad /usr/local/bin/
-ln -sf $HOME/.dotfiles_new/files/applications/* $HOME/.local/share/applications
+mkdir $HOME/.local/share/applications
+ln -sf $DIR/applications/* $HOME/.local/share/applications
 clear
 
 #Suckless Terminal
@@ -137,6 +136,5 @@ clear
 
 #wpgtk
 echo -e "\e[1;31m${bold}Setting wallpaper and theme${normal}\e[0m"
-wpg -ns 63.jpg
-$DIR/wpg/wp_init.sh
+wpg -s 63.jpg
 clear
