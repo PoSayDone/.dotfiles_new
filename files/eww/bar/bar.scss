@@ -1,7 +1,7 @@
 .bar {
   border-radius: 12px;
   background-color: $bg;
-  font-family: JetBrainsMono Nerd Font;
+  font-family: all-the-icons;
   font-size: 12px;
   color: $fg;
 }
@@ -14,7 +14,7 @@
     color: $bg;
     border-radius: 10px;
     font-size: inherit;
-    padding: 0 10.5px 0 10.5px;
+    padding: 0 8px;
   }
 }
 
@@ -138,8 +138,8 @@ calendar.highlight {
     border-radius: 10px;
     background: $bg;
     color: $cyan;
-    font-size: 14px;
-    padding: 0 10.5px 0 10.5px;
+    font-size: 16px;
+    padding: 0 8px;
     &:hover { background-color: $contrastbg; }
     &:active { background-color: $bgSecondary; }
   }
