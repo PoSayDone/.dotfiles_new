@@ -1,13 +1,13 @@
 * {
-background:			#0A0E11B3;
-backgroundSolid:			#0A0E11;
-backgroundAdditional:			#0A0E1166;
+background:			#081211B3;
+backgroundSolid:			#081211;
+backgroundAdditional:			#08121166;
     background-alt: #00000000;
-foreground:			#fffaff;
-foreground-alt:			#fffaff;
-selected:			#92A7CF;
-highlight:			#959DB2;
-urgent:				#5E81B4;
-on:					#6B89B6;
-off:				#92A7CF;
+foreground:			#ffffce;
+foreground-alt:			#ffffce;
+selected:			#C2733F;
+highlight:			#98674F;
+urgent:				#325765;
+on:					#47636B;
+off:				#C2733F;
 }
