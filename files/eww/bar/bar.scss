@@ -1,7 +1,7 @@
 .bar {
   border-radius: 12px;
   background-color: $bg;
-  font-family: Product Sans;
+  font-family: JetBrainsMono Nerd Font;
   font-size: 12px;
   color: $fg;
 }
@@ -14,31 +14,32 @@
     color: $bg;
     border-radius: 10px;
     font-size: inherit;
-    padding: 0 14px 0 10px;
+    padding: 0 10.5px 0 10.5px;
   }
 }
 
 .works {
-  margin-top: 7px;
+  margin-top: 6px;
   margin-left: 13px;
   font-size: 15px;
 
   .0 {
-    padding: 7px 11px;
+    padding: 7px 8px;
   }
 
   .01, .02, .03, .04, .05, .06, .07, .08, .09 {
     color: $fg;
-    padding: 7px 11px;
+    padding: 7px 8px;
   }
   
   .011, .022, .033, .044, .055, .066, .077, .088, .099 {
     color: $accent;
-    padding: 7px 11px;
+    padding: 7px 8px;
   }
 }
 
 .wintitle {
+  font-family: Product Sans;
   background-color: $bg;
   color: $cyan;
   margin: 7px 0;
@@ -48,19 +49,19 @@
 }
 
 .date-box {
+  font-family: Product Sans;
     font-weight: bold;
   background: $bg;
   margin: 7px 0px 7px 0;
-  padding: 0 8px 0 12px;
+  padding: 0 2px 0 14px;
   border-radius: 10px;
   .content {
     color: $fg;
     font-size: 14px;
-    padding-right: 3px;
   }
   .date-dropdown {
     margin: 0;
-    padding: 0 5px 0 0px;
+    padding: 0 10px 0 0px;
     color: $fg;
   }
 }
@@ -107,27 +108,15 @@ calendar.highlight {
 
 
 // controls dispatcher
-.controls-dispatcher-box {
-  margin: 5px 0 5px 13px;
-  .dispatcher-btn {
-    background-color: $contrastbg;
-    &:hover { background-color: $bgSecondary; }
-    &:active { background-color: $contrastbg; }
-    padding: 0px 16px 0px 13px;
-    border-radius: 10px;
-    color: $accent;
-  }
-}
-
 .actionsbox {
   background: $bg;
   border-radius: 10px;
-  padding: 0 12px;
-  font-family: Iosevka Nerd Font;
+  padding: 0 14px;
   margin: 7px 0px;
 }
 
 .battery__box {
+  font-family: Product Sans;
   background: $bg;
   border-radius: 10px;
   margin: 7px 0;
@@ -150,7 +139,7 @@ calendar.highlight {
     background: $bg;
     color: $cyan;
     font-size: 14px;
-    padding: 0 15px 0 11px;
+    padding: 0 10.5px 0 10.5px;
     &:hover { background-color: $contrastbg; }
     &:active { background-color: $bgSecondary; }
   }

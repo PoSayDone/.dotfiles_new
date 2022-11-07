@@ -140,19 +140,18 @@
 .pausebutton {
   transition: background 250ms;
   font-size: 16px;
+  padding: 14px 16px;
 }
 
 .playing {
   transition: all ease .2s;
   border-radius: 15px;
-  
-  padding: 13px 21px 13px 16px;
 }
 
 .paused {
   border-radius: 26px;  
   transition: all ease .2s;
-  padding: 13px 19px;
+  padding: 14px 14px 14px 18px;
 }
 
 

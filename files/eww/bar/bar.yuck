@@ -77,7 +77,7 @@
   (button :class "actionsbox" :onclick "eww -c ~/.config/eww open --toggle actions"
     (box :orientation "h"
         :space-evenly false
-        :spacing 13
+        :spacing 10
       ; margin are used to fix issues with nerd fonts widths :/
       (label :text "${network_icon}" :style "margin-right: ${network_status == 'Connected' ? '3px' : '0px'};")
       (label :text "${network_radio == 'on' ? '' : ''}")
