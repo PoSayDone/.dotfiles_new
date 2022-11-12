@@ -25,6 +25,10 @@ M.treesitter = {
   },
 }
 
+M.telescope = {
+  extensions_list = { "themes", "terms", "workspaces" },
+}
+
 M.nvimtree = {
   git = {
     enable = true,
@@ -54,6 +58,16 @@ M.blankline = {
     "norg",
     "",
   },
+}
+
+M.workspaces = {
+  config = function()
+    require("workspaces").setup{
+      hooks = {
+          open = {"Telescope find_files"},
+      },
+    }
+  end,
 }
 
 M.mason = {

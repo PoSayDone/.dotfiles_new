@@ -4,7 +4,7 @@ follow = mouse
 width = 300
 height = 120
 origin = bottom-right
-offset = 8x8
+offset = 32x32
 scale = 0
 indicate_hidden = yes
 shrink = no
@@ -37,18 +37,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 2
-    background = "#081211B3"
-    foreground = "#ffffce"
-frame_color = "#325765"
+    background = "#0a0a09B3"
+    foreground = "#fdfffd"
+frame_color = "#8F7359"
 
 [urgency_normal]
 timeout = 5
-    background = "#081211B3"
-    foreground = "#ffffce"
-frame_color = "#325765"
+    background = "#0a0a09B3"
+    foreground = "#fdfffd"
+frame_color = "#8F7359"
 
 [urgency_critical]
 timeout = 0
-    background = "#081211B3"
-    foreground = "#ffffce"
-frame_color = "#C2733F"
+    background = "#0a0a09B3"
+    foreground = "#fdfffd"
+frame_color = "#995C38"

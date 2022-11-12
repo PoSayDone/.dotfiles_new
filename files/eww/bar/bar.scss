@@ -138,8 +138,8 @@ calendar.highlight {
     border-radius: 10px;
     background: $bg;
     color: $cyan;
-    font-size: 16px;
-    padding: 0 8px;
+    font-size: 13px;
+    padding: 0 10px;
     &:hover { background-color: $contrastbg; }
     &:active { background-color: $bgSecondary; }
   }

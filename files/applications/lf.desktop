@@ -4,6 +4,6 @@ Name=lf
 Comment=Launches the lf file manager
 Icon=utilities-terminal
 Terminal=false
-Exec=autofocus_pad st -c ranger -e lf-archivemount
+Exec=autofocus_pad st -c ranger -e lf
 Categories=ConsoleOnly;System;FileTools;FileManager
 MimeType=inode/directory;

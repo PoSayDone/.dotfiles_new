@@ -13,13 +13,14 @@ yay -Syu --noconfirm 'sxhkd' 'rofi' 'dunst' 'alsa-utils' 'spotifywm-git'\
   'ksuperkey' 'betterlockscreen' 'xfce-polkit' 'xfce4-power-manager' 'brightnessctl'\
   'xsettingsd' 'xorg-xsetroot' 'wmname' 'git' 'bspwm' 'wpgtk' 'meson'\
   'zathura' 'zathura-pdf-mupdf' 'pywal-discord-git' 'bpytop' 'ninja'\
-  'neovim' 'qutebrowser' 'apple-fonts' 'libconfig' 'spotify'\
+  'neovim' 'qutebrowser' 'apple-fonts' 'libconfig' 'spotify' 'npm'\
   'qt5-styleplugins' 'lutris' 'discord' 'cmake' 'libev' 'uthash' 'bluez-utils'\
   'betterdiscordctl' 'dash' 'eww' 'networkmanager-dmenu-git' 'xorg'\
   'base-devel' 'rustup' 'python' 'python-pip' 'lf' 'archivemount-git'\
   'gobject-introspection' 'imagemagick' 'zsh' 'jq' 'poetry' 'xdo'\
   'mpd' 'mpc' 'playerctl' 'pamixer' 'redshift' 'spicetify-cli' --needed
 pip install utils material_color_utilities_python
+sudo npm install -g wscat ws node-ws
 BACK_PID=$!
 wait $BACK_PID
 clear
@@ -100,19 +101,26 @@ cd ..
 rm -rf zathura-pywal
 clear
 
-#NvChad installation
-echo -e "\e[1;31m${bold}Installing nvchad${normal}\e[0m"
-git clone https://github.com/NvChad/NvChad $CONFIG_DIR/nvim --depth 1
-ln -sf $HOME/.dotfiles_new/files/nvchad/custom $CONFIG_DIR/nvim/lua/
+#Astronvim installation
+echo -e "\e[1;31m${bold}Installing Astronvim${normal}\e[0m"
+mv ~/.config/nvim ~/.config/nvim.bak
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+mkdir $HOME/.config/nvim/lua/user
+git clone https://github.com/posaydone/astronvim_config.git $HOME/.config/nvim/lua/user
+st -e nvim +PackerSync &
 clear
 
 #qutebrowser pywal theme installation
+echo -e "\e[1;31m${bold}PRESS ENTER TO SKIP NEOVIM ERRORS AND TO START INSTALLATION. CLOSE TERMINAL WITH NEOVIM AFTER INSTALLATION IS COMPLETE${normal}\e[0m"
+echo -e "\e[1;31m${bold}CLOSE TERMINAL WITH NEOVIM AFTER INSTALLATION IS COMPLETE${normal}\e[0m"
 echo -e "\e[1;31m${bold}Installing pywal theme for qutebrowser${normal}\e[0m"
 git clone https://github.com/makman12/pywalQute.git $CONFIG_DIR/qutebrowser/pywalQute/
 ln -sf $HOME/.dotfiles_new/files/qutebrowser/config.py $CONFIG_DIR/qutebrowser/
 clear
 
 #Spicetify
+echo -e "\e[1;31m${bold}PRESS ENTER TO SKIP NEOVIM ERRORS AND TO START INSTALLATION. CLOSE TERMINAL WITH NEOVIM AFTER INSTALLATION IS COMPLETE${normal}\e[0m"
+echo -e "\e[1;31m${bold}CLOSE TERMINAL WITH NEOVIM AFTER INSTALLATION IS COMPLETE${normal}\e[0m"
 echo -e "\e[1;31m${bold}Configuring spicetify${normal}\e[0m"
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R

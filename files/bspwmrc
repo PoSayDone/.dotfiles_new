@@ -51,6 +51,7 @@ bspc config pointer_motion_interval 10
 
 # 1 > terminal
 bspc rule -a St desktop='^1' follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
+bspc rule -a *:St desktop='^1' follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
 bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web
@@ -59,12 +60,12 @@ bspc rule -a chromium desktop='^2' follow=on focus=on
 bspc rule -a qutebrowser desktop='^2' follow=on focus=on
 
 # 3 > files
-declare -a files=(Pcmanfm Thunar qBittorrent ranger)
+declare -a files=(Pcmanfm Thunar qBittorrent ranger *:ranger)
 for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 # 4 > code
-declare -a code=(Geany code-oss nvim)
+declare -a code=(Geany code-oss nvim *:nvim)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
@@ -104,8 +105,11 @@ Viewnior feh Nm-connection-editor Wpg Skype skype Steam zoom)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
-bspc rule -a ranger follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
-bspc rule -a nvim follow=on focus=on rectangle=1380x902+0+0 state=pseudo_tiled
+bspc rule -a ranger follow=on focus=on rectangle=1377x882+0+0 state=pseudo_tiled
+bspc rule -a *:ranger follow=on focus=on rectangle=1377x882+0+0 state=pseudo_tiled
+bspc rule -a 'main.py' state=floating
+bspc rule -a nvim follow=on focus=on rectangle=1377x882+0+0 state=pseudo_tiled
+bspc rule -a *:nvim follow=on focus=on rectangle=1377x882+0+0 state=pseudo_tiled
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 bspc rule -a Wine:winword.exe border=off
@@ -143,6 +147,7 @@ xsetroot -cursor_name left_ptr
 # Restore wallpaper
 
 bash $HOME/.config/wpg/wp_init.sh
+xrdb merge ~/.Xresources
 
 # Start bspwm scripts
 autostart

@@ -24,6 +24,10 @@ return {
     },
 
     -- override default configs
+    ["nvim-telescope/telescope.nvim"] = {
+        override_options = overrides.telescope
+    },
+
     ["kyazdani42/nvim-tree.lua"] = {
         override_options = overrides.nvimtree
     },
@@ -64,13 +68,7 @@ return {
 
     --workspaces plugin
     ["natecraddock/workspaces.nvim"] = {
-    config = function()
-      require("workspaces").setup{
-        hooks = {
-            open = {"Telescope find_files"},
-        },
-      }
-    end,
+    override_options = overrides.workspaces
     },
 
     -- autoclose tags in html, jsx only

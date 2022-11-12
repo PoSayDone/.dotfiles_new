@@ -114,7 +114,6 @@
 (defwidget music [title artist cover player]
   (box :class "musicbox"
        :orientation "v"
-       :spacing 8
        :style "background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 30%, ${pctl_sub['image_accent']}), url(\"${pctl_sub['mpris:artUrl']}\"); background-size: cover; background-position: center;"
   (box :class "musicbox__top"
        :halign "start"
@@ -127,6 +126,7 @@
        (box :class "musicbox__center--metadata"
             :orientation "v"
             :halign "start"
+            :valign "center"
             :hexpand true
             (label :limit-width 25 :halign "start" :text title :class "title")
             (label :limit-width 25 :halign "start" :text artist :class "artist"))
@@ -178,7 +178,7 @@
       (scale 
              :hexpand true
              :value br
-             :onchange "~/.config/eww/scripts/brightness.sh set {}"
+             :onchange "brightnessctl set {}%"
              :min 0
              :max 101)
       (box :class "scale-label"

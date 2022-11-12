@@ -74,7 +74,7 @@
       background-color: $bg; 
       padding: 18px 0px 18px 6px;
       min-width: 170px;
-      border-radius: 23px;
+      border-radius: 25px;
       transition: all ease .2s;
       color: $fg;
       &:hover { background-color: $bgSecondary; }
@@ -133,13 +133,13 @@
   }
   .artist{
     font-weight: 400;
+    font-size: 15px;
     transition: text 250ms;
   }
 }
 
 .pausebutton {
   transition: background 250ms;
-  font-size: 16px;
   padding: 14px 16px;
 }
 
